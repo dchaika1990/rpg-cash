@@ -10,11 +10,21 @@
     <meta name="keywords" content="">
 
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Exo+2:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
 
+    <!-- Slick css -->
+    <link rel="stylesheet" href="./assets/styles/css/Slick/slick.css">
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/styles/css/main.css">
+
+
+    <!-- jQuery -->
+    <script src="./assets/scripts/jQuery/jquery-3.3.1.min.js"></script>
+    <!-- Slick js -->
+    <script src="./assets/scripts/Slick/slick.min.js"></script>
+    <!-- Scripts -->
+    <script src="./assets/scripts/main.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -41,10 +51,18 @@
                         <div class="soc-btn-list d-flex align-center">
                             <span>КОНТАКТЫ</span>
                             <ul class="d-flex">
-                                <li class="soc-btn vk"></li>
-                                <li class="soc-btn facebook"></li>
-                                <li class="soc-btn twitter"></li>
-                                <li class="soc-btn youtube"></li>
+                                <li>
+                                    <a href="#" class="soc-btn vk"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="soc-btn facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="soc-btn twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="soc-btn youtube"></a>
+                                </li>
                             </ul>
                         </div>
                         <div class="icon-link m-left-auto">
@@ -84,16 +102,414 @@
                                     <img src="./assets/images/icons/icon-country.png" alt="country flag">
                                     <span class="icon icon-arrow-down"></span>
                                 </button>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
+                                        <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
+                                        <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="header__toggle currency toggle">
                                 <button class="btn btn-toggle">
                                     <span>USD</span>
                                     <span class="icon icon-arrow-down"></span>
                                 </button>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li>
+                                            <span>usd</span>
+                                        </li>
+                                        <li>
+                                            <span>ru</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
             </header>
+            <div class="main-wrap">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li>
+                            <span class="icon icon-goods"></span>
+                            <span>КАТАЛОГ ТОВАРОВ</span>
+                        </li>
+                        <li>
+                            <span class="icon icon-money"></span>
+                            <span>ВАЛЮТА</span>
+                            <div class="list-hover">
+                                <div class="dropdown-wrap">
+                                    <div class="dropdown-wrap__block">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Path Of Exile EU</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">EVE Online</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">World of Tanks</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">TESO</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Star Wars The old Republic</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Warframe</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-wrap__block">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Path Of Exile EU</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">EVE Online</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">World of Tanks</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Diablo 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Hearthstone</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon icon-things"></span>
+                            <span>ВЕЩИ</span>
+                        </li>
+                        <li>
+                            <span class="icon icon-pumping"></span>
+                            <span>ПРОКАЧКА</span>
+                        </li>
+                        <li>
+                            <span class="icon icon-accaunt"></span>
+                            <span>АККАУНТЫ</span>
+                        </li>
+                        <li>
+                            <span class="icon icon-popular"></span>
+                            <span>ПОПУЛЯРНОЕ</span>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="main">
+                    <div class="aside-bar">
+                        <ul>
+                            <li>
+                            <span>
+                            Path Of Exile EU
+                            </span>
+                                <div class="list-hover">
+                                    <div class="dropdown-wrap">
+                                        <div class="dropdown-wrap__block">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Вещи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Прокачка</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Аккаунты</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ключи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>EVE Online</span>
+                                <div class="list-hover">
+                                    <div class="dropdown-wrap">
+                                        <div class="dropdown-wrap__block">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Вещи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Прокачка</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Аккаунты</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ключи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>World of Tanks</span>
+                                <div class="list-hover">
+                                    <div class="dropdown-wrap">
+                                        <div class="dropdown-wrap__block">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Вещи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Прокачка</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Аккаунты</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ключи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>TESO</span>
+                                <div class="list-hover">
+                                    <div class="dropdown-wrap">
+                                        <div class="dropdown-wrap__block">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Вещи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Прокачка</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Аккаунты</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ключи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Star Wars The old Republic</span>
+                            </li>
+                            <li>
+                                <span>Warframe</span>
+                            </li>
+                            <li>
+                                <span>Guild Wars 2</span>
+                            </li>
+                            <li>
+                                <span>Lineage 2 Classiс</span>
+                            </li>
+                            <li>
+                                <span>Lineage 2</span>
+                            </li>
+                            <li>
+                                <span>Blade & Soul</span>
+                            </li>
+                            <li>
+                                <span>Perfect World</span>
+                            </li>
+                            <li>
+                                <span>Archeage RU</span>
+                            </li>
+                            <li>
+                                <span>Tree Of Savior</span>
+                            </li>
+                            <li>
+                                <span>Albion Online</span>
+                            </li>
+                            <li>
+                                <span>Diablo 3</span>
+                            </li>
+                            <li>
+                                <span>Hearthstone</span>
+                            </li>
+                            <li>
+                                <span>Dota 2</span>
+                                <div class="list-hover">
+                                    <div class="dropdown-wrap">
+                                        <div class="dropdown-wrap__block">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Вещи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Прокачка</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Аккаунты</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ключи</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Валюта</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Heroes of the storm</span>
+                            </li>
+                            <li>
+                                <span>Overwatch</span>
+                            </li>
+                            <li>
+                                <span>Counter Strike: Global </span>
+                            </li>
+                            <li>
+                                <span>Offensive</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="layout">
+                        <div class="layout__banner">
+                            <div class="layout__slider_wrap">
+                                <div class="layout__slider_content">
+                                    <div class="slide">
+                                        <div class="layout__slider_title">
+                                            <span>ЗАГОЛОВОК СЛАЙДЕРА</span>
+                                        </div>
+                                        <div class="layout__slider_subtitle">
+                                            <span>ПОДЗАГОЛОВОК АКЦИИ</span>
+                                        </div>
+                                        <div class="layout__slider_text">
+                                            <p>Это пример текста баннера, создан для примера, может быть малым и большим в зависимости от задачи.</p>
+                                        </div>
+                                        <div class="layout__slider_link">
+                                            <button class="btn btn-default">подробнее</button>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="layout__slider_title">
+                                            <span>ЗАГОЛОВОК СЛАЙДЕРА</span>
+                                        </div>
+                                        <div class="layout__slider_subtitle">
+                                            <span>ПОДЗАГОЛОВОК АКЦИИ</span>
+                                        </div>
+                                        <div class="layout__slider_text">
+                                            <p>Это пример текста баннера, создан для примера, может быть малым и большим в зависимости от задачи.</p>
+                                        </div>
+                                        <div class="layout__slider_link">
+                                            <button class="btn btn-default">подробнее</button>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="layout__slider_title">
+                                            <span>ЗАГОЛОВОК СЛАЙДЕРА</span>
+                                        </div>
+                                        <div class="layout__slider_subtitle">
+                                            <span>ПОДЗАГОЛОВОК АКЦИИ</span>
+                                        </div>
+                                        <div class="layout__slider_text">
+                                            <p>Это пример текста баннера, создан для примера, может быть малым и большим в зависимости от задачи.</p>
+                                        </div>
+                                        <div class="layout__slider_link">
+                                            <button class="btn btn-default">подробнее</button>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="layout__slider_title">
+                                            <span>ЗАГОЛОВОК СЛАЙДЕРА</span>
+                                        </div>
+                                        <div class="layout__slider_subtitle">
+                                            <span>ПОДЗАГОЛОВОК АКЦИИ</span>
+                                        </div>
+                                        <div class="layout__slider_text">
+                                            <p>Это пример текста баннера, создан для примера, может быть малым и большим в зависимости от задачи.</p>
+                                        </div>
+                                        <div class="layout__slider_link">
+                                            <button class="btn btn-default">подробнее</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layout__slider_btn">
+                                    <div class="slider-next"></div>
+                                    <div class="slider-prev"></div>
+                                </div>
+                                <div class="layout__slider_dots">
+                                    <div class="dot" data-number="slick-slide-control00">
+                                        <div class="layout__slider_dots__title">
+                                            <span>ЗАГОЛОВОК</span>
+                                        </div>
+                                        <div class="layout__slider_dots__text">
+                                            <p>Текст баннера для примера</p>
+                                        </div>
+                                    </div>
+                                    <div class="dot" data-number="slick-slide-control01">
+                                        <div class="layout__slider_dots__title">
+                                            <span>ЗАГОЛОВОК</span>
+                                        </div>
+                                        <div class="layout__slider_dots__text">
+                                            <p>Текст баннера для примера</p>
+                                        </div>
+                                    </div>
+                                    <div class="dot" data-number="slick-slide-control02">
+                                        <div class="layout__slider_dots__title">
+                                            <span>ЗАГОЛОВОК</span>
+                                        </div>
+                                        <div class="layout__slider_dots__text">
+                                            <p>Текст баннера для примера</p>
+                                        </div>
+                                    </div>
+                                    <div class="dot" data-number="slick-slide-control03">
+                                        <div class="layout__slider_dots__title">
+                                            <span>ЗАГОЛОВОК</span>
+                                        </div>
+                                        <div class="layout__slider_dots__text">
+                                            <p>Текст баннера для примера</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layout__aside">
+                                <div class="layout__advertising"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
