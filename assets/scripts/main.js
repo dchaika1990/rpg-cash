@@ -22,7 +22,7 @@ $(document).ready(function () {
     });
 
     // Banner slider
-    $('.layout__slider_content').slick({
+    $('.layout__banner .layout__slider_content').slick({
         dots: true,
         slidesToShow: 1
     });
@@ -30,29 +30,29 @@ $(document).ready(function () {
     // Slider btns
 
     $('.slider-prev').click(function () {
-       $('.slick-prev').click();
-        chageActive();
+       $(this).parent().prev('.layout__slider_content').find('.slick-prev').click();
+        changeActive();
 
     });
 
     $('.slider-next').click(function () {
-        $('.slick-next').click();
-        chageActive();
+        $(this).parent().prev('.layout__slider_content').find('.slick-next').click();
+        changeActive();
     });
 
     // Slider dots
     $('.layout__slider_dots div').on('click', function (e) {
         var data = $(this).attr('data-number');
         $('#' + data).click();
-        chageActive();
+        changeActive();
     });
 
     // Slider load
     $(window).on('load', function () {
-        chageActive();
+        changeActive();
     });
 
-    function chageActive() {
+    function changeActive() {
         $('.layout__banner .slick-dots li').each(function () {
             if ( $(this).hasClass('slick-active') ) {
                 var id = $(this).children().attr('id');
@@ -65,5 +65,33 @@ $(document).ready(function () {
             }
         })
     }
+
+    // Goods slider
+    $('.layout__slider_big_wrap .layout__slider_content').slick({
+        dots: false,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
 
 });
