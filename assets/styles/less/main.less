@@ -604,6 +604,7 @@ label{
 
 .wrapper{
   background: url("../../images/temp/background.jpg") no-repeat center / cover;
+  overflow: hidden;
 }
 
 .header{
@@ -619,7 +620,7 @@ label{
     display: inline-block;
     left: -274px;
     top: 0;
-    height: 555px;
+    height: 550px;
     width: 275px;
     background: url("../../images/temp/header-bg-left.png") no-repeat center / cover;
   }
@@ -798,6 +799,7 @@ label{
   height: 68px;
   box-shadow: 0 3px 2px 1px rgba(0,0,0,.07);
   position: relative;
+  margin-bottom: 15px;
 
   &::after{
     position: absolute;
@@ -931,6 +933,7 @@ label{
   width: 264px;
   flex-shrink: 0;
   margin-bottom: 55px;
+  margin-top: -15px;
 
   & > ul{
     background-color: @colorWhite;
@@ -1045,21 +1048,46 @@ label{
 }
 
 .footer{
-  background: url("../../images/temp/bg-footer.png") no-repeat center / cover;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 65px 73px 50px 64px;
-  color: @colorWhite;
-  font-size: @sizeFooter;
+  background: url("../../images/temp/bg-footer1.png") no-repeat center / cover;
   margin-top: 23px;
   position: relative;
-  height: 364px;
+  min-height: 364px;
+
+  &__wrap{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 65px 73px 50px 64px;
+    color: @colorWhite;
+    font-size: @sizeFooter;
+
+    &::after{
+      position: absolute;
+      content: '';
+      bottom: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 13px;
+      width: 1306px;
+      background: url("../../images/temp/bottom-line.png") no-repeat bottom;
+    }
+
+    &::before{
+      position: absolute;
+      content: '';
+      top: -16px;
+      right: 21%;
+      width: 112px;
+      height: 90px;
+      background: url("../../images/temp/bg-brilliant-footer.png") no-repeat top;
+    }
+  }
 
   &::before{
     position: absolute;
     content: '';
     left: -276px;
-    top: 78px;
+    top: 77px;
     width: 277px;
     height: 286px;
     background: url("../../images/temp/bg-footer-left.png") no-repeat top left;
@@ -1367,6 +1395,7 @@ label{
 
   &__img{
     display: inline-block;
+    max-height: 150px;
   }
 
   &__price-wrap{
@@ -1400,6 +1429,7 @@ label{
     margin-right: -30px;
     padding-right: 30px;
     padding-left: 20px;
+    width: 100%;
 
     .layout{
       &__block{

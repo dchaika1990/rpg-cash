@@ -578,6 +578,7 @@ label {
 /*DEFAULT COMPONENTS START*/
 .wrapper {
   background: url("../../images/temp/background.jpg") no-repeat center / cover;
+  overflow: hidden;
 }
 .header {
   background: url("../../images/temp/header-bg-center.png") no-repeat center / cover;
@@ -592,7 +593,7 @@ label {
   display: inline-block;
   left: -274px;
   top: 0;
-  height: 555px;
+  height: 550px;
   width: 275px;
   background: url("../../images/temp/header-bg-left.png") no-repeat center / cover;
 }
@@ -788,6 +789,7 @@ label {
   -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.07);
           box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.07);
   position: relative;
+  margin-bottom: 15px;
 }
 .nav::after {
   position: absolute;
@@ -926,6 +928,7 @@ label {
       -ms-flex-negative: 0;
           flex-shrink: 0;
   margin-bottom: 55px;
+  margin-top: -15px;
 }
 .aside-bar > ul {
   background-color: #fff;
@@ -1027,7 +1030,13 @@ label {
           flex-wrap: wrap;
 }
 .footer {
-  background: url("../../images/temp/bg-footer.png") no-repeat center / cover;
+  background: url("../../images/temp/bg-footer1.png") no-repeat center / cover;
+  margin-top: 23px;
+  position: relative;
+  min-height: 364px;
+}
+.footer__wrap {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1038,15 +1047,33 @@ label {
   padding: 65px 73px 50px 64px;
   color: #fff;
   font-size: 16px;
-  margin-top: 23px;
-  position: relative;
-  height: 364px;
+}
+.footer__wrap::after {
+  position: absolute;
+  content: '';
+  bottom: -7px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 13px;
+  width: 1306px;
+  background: url("../../images/temp/bottom-line.png") no-repeat bottom;
+}
+.footer__wrap::before {
+  position: absolute;
+  content: '';
+  top: -16px;
+  right: 21%;
+  width: 112px;
+  height: 90px;
+  background: url("../../images/temp/bg-brilliant-footer.png") no-repeat top;
 }
 .footer::before {
   position: absolute;
   content: '';
   left: -276px;
-  top: 78px;
+  top: 77px;
   width: 277px;
   height: 286px;
   background: url("../../images/temp/bg-footer-left.png") no-repeat top left;
@@ -1406,6 +1433,7 @@ label {
 }
 .advertising__img {
   display: inline-block;
+  max-height: 150px;
 }
 .advertising__price-wrap {
   text-align: center;
@@ -1441,6 +1469,7 @@ label {
   margin-right: -30px;
   padding-right: 30px;
   padding-left: 20px;
+  width: 100%;
 }
 .layout.layout-big .layout__block::after {
   background: url("../../images/temp/block-after-another.png") no-repeat bottom;
