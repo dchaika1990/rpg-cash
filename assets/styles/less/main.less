@@ -70,7 +70,6 @@ body{
   font-size: @sizeBody;
   line-height: @lhNorm;
   font-weight: 400;
-  background: url("../../images/temp/background.jpg") no-repeat center / cover;
   background-color: @colorWhite;
   overflow-x: hidden;
 }
@@ -94,13 +93,13 @@ a{
 }
 img{
   max-width: 100%;
-  height: 100%;
 }
 input,
 textarea,
 button{
   outline: none;
   border: none;
+  background: transparent;
 }
 textarea{
   resize: vertical;
@@ -219,6 +218,24 @@ label{
   &.icon-comments::before{
     background: url("../../images/icons/icon-commets.png") no-repeat center;
   }
+  &.icon-qivi::before{
+    background: url("../../images/icons/qivi.png") no-repeat center;
+  }
+  &.icon-wm{
+    width: 95px;
+    &::before{
+      background: url("../../images/icons/web-money.png") no-repeat center;
+    }
+  }
+  &.icon-pp::before{
+    background: url("../../images/icons/pay-paul.png") no-repeat center;
+  }
+  &.icon-visa::before{
+    background: url("../../images/icons/visa.png") no-repeat center;
+  }
+  &.icon-mc::before{
+    background: url("../../images/icons/master-card.png") no-repeat center;
+  }
 }
 
 .icon-link{
@@ -229,8 +246,8 @@ label{
 
 .soc-btn{
   display: inline-block;
-  height: 39px;
-  width: 39px;
+  height: 38px;
+  width: 38px;
   position: relative;
   cursor: pointer;
 
@@ -255,6 +272,9 @@ label{
   }
   &.youtube:before{
     background: url("../../images/icons/icon-y.png");
+  }
+  &.instagram:before{
+    background: url("../../images/icons/icon-i.png");
   }
 }
 
@@ -582,6 +602,10 @@ label{
 
 /*DEFAULT COMPONENTS START*/
 
+.wrapper{
+  background: url("../../images/temp/background.jpg") no-repeat center / cover;
+}
+
 .header{
   background: url("../../images/temp/header-bg-center.png") no-repeat center / cover;
   position: relative;
@@ -595,7 +619,7 @@ label{
     display: inline-block;
     left: -274px;
     top: 0;
-    height: 550px;
+    height: 555px;
     width: 275px;
     background: url("../../images/temp/header-bg-left.png") no-repeat center / cover;
   }
@@ -603,10 +627,10 @@ label{
   &::after{
     position: absolute;
     content: '';
-    right: -163px;
+    right: -160px;
     top: 0;
-    height: 248px;
-    width: 164px;
+    height: 249px;
+    width: 161px;
     display: inline-block;
     background: url("../../images/temp/header-bg-right.png") no-repeat center / cover;
   }
@@ -622,6 +646,9 @@ label{
   &__img{
     margin-right: 7px;
     flex-shrink: 0;
+    a{
+      display: inline-block;
+    }
   }
   &__content{
     letter-spacing: 0.7px;
@@ -649,12 +676,13 @@ label{
     width: 50%;
     padding-top: 37px;
     padding-bottom: 30px;
+    margin-bottom: 15px;
   }
   &__links{
     font-family: @fontTitle;
     font-weight: 700;
     color: @colorWhite;
-    padding-bottom: 15px;
+    padding-bottom: 12px;
     border-bottom: 1px dashed rgba(255,255,255,.3);
   }
   &__input{
@@ -692,7 +720,7 @@ label{
     display: flex;
     justify-content: space-between;
     padding-left: 6px;
-    margin-bottom: 4px;
+    margin-bottom: 14px;
 
     .icon-link{
       font-size: @sizeBodySm;
@@ -709,6 +737,14 @@ label{
       &__content{
         color: #fff;
         padding-top: 6px;
+
+        .goods-count{
+          font-weight: bold;
+        }
+
+        a{
+          font-weight: bold;
+        }
       }
     }
   }
@@ -894,6 +930,7 @@ label{
 .aside-bar{
   width: 264px;
   flex-shrink: 0;
+  margin-bottom: 55px;
 
   & > ul{
     background-color: @colorWhite;
@@ -905,7 +942,7 @@ label{
       position: absolute;
       display: inline-block;
       top: 100%;
-      left: -5px;
+      left: -4px;
       width: 275px;
       height: 55px;
       background: url("../../images/temp/bg-aside-bottom.png") no-repeat top left;
@@ -922,7 +959,7 @@ label{
       }
 
       span{
-        padding: 12px 10px;
+        padding: 13.5px 10px;
         display: inline-block;
         width: 100%;
       }
@@ -939,7 +976,7 @@ label{
         display: inline-block;
         width: 13px;
         height: 11px;
-        right: 9px;
+        right: 21px;
         top: 50%;
         transform: translateY(-50%);
         background: url("../../images/icons/icon-list.png") no-repeat center;
@@ -1003,6 +1040,205 @@ label{
 
 .main{
   display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.footer{
+  background: url("../../images/temp/bg-footer.png") no-repeat center / cover;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 65px 73px 50px 64px;
+  color: @colorWhite;
+  font-size: @sizeFooter;
+  margin-top: 23px;
+  position: relative;
+  height: 364px;
+
+  &::before{
+    position: absolute;
+    content: '';
+    left: -276px;
+    top: 78px;
+    width: 277px;
+    height: 286px;
+    background: url("../../images/temp/bg-footer-left.png") no-repeat top left;
+  }
+
+  &::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: -277px;
+    width: 277px;
+    height: 364px;
+    background: url("../../images/temp/bg-footer-right.png") no-repeat top right;
+  }
+
+  &__left{
+    width: 29%;
+    padding-right: 20px;
+  }
+  &__logo_wrap{
+    display: flex;
+  }
+  &__logo{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    font-family: @fontTitle;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &__logo_img{
+    margin-right: 7px;
+    flex-shrink: 0;
+    width: 35px;
+  }
+  &__logo_title{
+    display: flex;
+    flex-direction: column;
+    font-size: @sizeLogoFooterTopTitle;
+    color: @colorWhite;
+    line-height: 32px;
+
+    span:last-child{
+      color: @colorGold;
+      font-size: @sizeLogoFooterBottomTitle;
+      line-height: 24px;
+    }
+  }
+  &__logo_text{
+    font-family: @fontTitle;
+    display: flex;
+    flex-direction: column;
+    .gradient-text;
+    font-size: @sizeLogoFooterTopSubtitle;
+    margin-left: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    justify-content: flex-end;
+
+    span:last-child{
+      font-size: @sizeLogoFooterBottomSubtitle;
+      line-height: 24px;
+    }
+  }
+  &__text{
+    line-height: 24.84px;
+    margin-top: 44px;
+
+    a{
+      position: relative;
+
+      &::after{
+        content: '';
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 16px;
+        background: url("../../images/icons/icon-quotes-left-gold.png") no-repeat center;
+      }
+    }
+  }
+
+  &__center{
+    width: 36%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__right{
+    width: 35%;
+    display: flex;
+  }
+  &__nav{
+    min-height: 115px;
+    padding-right: 35px;
+
+    & + .footer__nav{
+      margin-top: 12px;
+    }
+
+    &.footer-soc-list{
+      padding-right: 0;
+      position: relative;
+
+      &::after{
+        position: absolute;
+        content: '';
+        right: 0;
+        left: 9px;
+        bottom: 11px;
+        width: 291px;
+        height: 6px;
+        background: url("../../images/temp/footer-line.png") no-repeat center;
+      }
+    }
+  }
+  &__nav_title{
+    font-family: @fontTitle;
+    color: @colorGold;
+    text-transform: uppercase;
+  }
+  &__nav_links{
+    margin-top: 19px;
+    padding-left: 5px;
+
+    li{
+      position: relative;
+      padding-left: 6px;
+
+      &::before{
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: -6px;
+        width: 5px;
+        height: 4px;
+        background: url("../../images/icons/footer-link.png") no-repeat center;
+      }
+
+      & + li{
+        margin-top: 10px;
+      }
+    }
+
+    a{
+      color: @colorWhite;
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+
+    &.links-none{
+      margin-top: 12px;
+
+      li{
+        padding-left: 0;
+
+        &::before{
+          content: none;
+        }
+        & + li {
+          margin-top: 0;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  &__block{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+  }
 }
 
 /*DEFAULT COMPONENTS END*/
@@ -1066,7 +1302,7 @@ label{
 .advertising{
   width: 100%;
   height: 100%;
-  padding-top: 17px;
+  padding-top: 19px;
   padding-bottom: 15px;
   position: relative;
   display: flex;
@@ -1094,7 +1330,7 @@ label{
   }
 
   &__left{
-    padding-left: 20px;
+    padding-left: 27px;
     font-weight: bold;
     font-family: @fontTitle;
     font-size: @sizeLogoHeaderSubtitle;
@@ -1104,7 +1340,7 @@ label{
   }
 
   &__right{
-    padding-right: 25px;
+    padding-right: 22px;
   }
 
   &__title{
@@ -1140,7 +1376,7 @@ label{
     position: absolute;
     right: 0;
     left: 0;
-    top: 79px;
+    top: 100px;
   }
 
   &__price{
@@ -1156,7 +1392,6 @@ label{
 .layout{
   width: ~'calc( 100% - 264px )';
   padding-left: 15px;
-  margin-top: 15px;
 
   &.layout-big{
     display: flex;
@@ -1166,15 +1401,27 @@ label{
     padding-right: 30px;
     padding-left: 20px;
 
-    .layout__block{
-      &::after{
-        background: url("../../images/temp/block-after-another.png") no-repeat bottom;
-        width: 259px;
-        height: 227px;
-        right: -160px;
-        bottom: -96px;
+    .layout{
+      &__block{
+        &::after{
+          background: url("../../images/temp/block-after-another.png") no-repeat bottom;
+          width: 259px;
+          height: 227px;
+          right: -169px;
+          bottom: -96px;
+        }
+      }
+      &__aside-title{
+        padding-top: 8px;
+        padding-left: 20px;
+        margin-bottom: 30px;
+
+        &::before{
+          left: 0;
+        }
       }
     }
+
 
     &.bkg{
       background: url("../../images/temp/bg-popular.png") no-repeat center / cover;
@@ -1209,7 +1456,7 @@ label{
           content: '';
           width: 326px;
           height: 216px;
-          bottom: -188px;
+          bottom: -203px;
           left: -215px;
           background: url("../../images/temp/block-after.png") no-repeat center;
           z-index: 20;
@@ -1281,7 +1528,7 @@ label{
   }
 
   &__slider_text{
-    margin-top: 15px;
+    margin-top: 19px;
     width: 60%;
   }
 
@@ -1363,7 +1610,7 @@ label{
       &::after{
         content: '';
         position: absolute;
-        right: -20px;
+        right: -35px;
         top: 0;
         bottom: 0;
         width: 88px;
@@ -1424,8 +1671,8 @@ label{
           position: absolute;
           content: '';
           top: -18px;
-          left: 20px;
-          right: -20px;
+          left: 35px;
+          right: -35px;
           height: 18px;
           background: url("../../images/temp/border-slider-dots.png") no-repeat top center;
         }
@@ -1473,8 +1720,8 @@ label{
       content: '';
       width: 326px;
       height: 216px;
-      bottom: -50px;
-      right: -239px;
+      bottom: -59px;
+      right: -231px;
       background: url("../../images/temp/block-after.png") no-repeat center;
       z-index: 20;
     }
@@ -1633,7 +1880,7 @@ label{
     position: relative;
     font-weight: bold;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 21px;
 
     &::before{
       position: absolute;
@@ -1650,8 +1897,8 @@ label{
   &__news_block{
     display: flex;
     flex-wrap: wrap;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 17px;
+    padding-bottom: 16px;
     padding-left: 6px;
     position: relative;
 
@@ -1755,7 +2002,7 @@ label{
 
   &__soc-block{
     background: url("../../images/temp/bg-soc.png") no-repeat center;
-    height: 340px;
+    height: 350px;
     padding: 20px;
     position: relative;
 
@@ -1782,7 +2029,7 @@ label{
   // Comments
 
   &__comments-block{
-
+    padding-left: 13px;
   }
 
   &__comments-head{
@@ -1820,9 +2067,4 @@ label{
   }
 }
 
-.main{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
 
