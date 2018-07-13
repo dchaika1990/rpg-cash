@@ -32,6 +32,10 @@
     <div class="wrapper">
         <div class="container">
             <header class="header d-flex justify-between">
+                <div class="nav-bar__mobile">
+                    <div class="nav-bar__btn"></div>
+                    <div class="nav-bar__dropdown"></div>
+                </div>
                 <a href="#" class="header__logo d-flex align-center">
                     <div class="header__img">
                         <img src="./assets/images/temp/logo.png" alt="logo img">
@@ -81,57 +85,65 @@
                     </div>
                 </div>
                 <div class="header__right-nav">
-                        <div class="auth-controls">
-                            <div class="icon-link login">
-                                <a href="#" class="icon icon-login"></a>
-                                <a href="#">Войти</a>
-                            </div>
-                            <button class="btn btn-default">РЕГИСТРАЦИЯ</button>
+                    <div class="auth-controls-mob">
+                        <a href="#">
+                            <span class="icon icon-basket-full"></span>
+                        </a>
+                        <a href="#" class="icon icon-work"></a>
+                        <a href="#" class="icon icon-reviews"></a>
+                        <a href="#" class="icon icon-login"></a>
+                    </div>
+                    <div class="auth-controls">
+                        <div class="icon-link login">
+                            <a href="#" class="icon icon-login"></a>
+                            <a href="#">Войти</a>
                         </div>
-                        <div class="header__basket basket-full">
-                            <div class="header__img">
-                                <a href="#">
-                                    <img src="./assets/images/icons/icon-basket-full.png" alt="basket img">
-                                </a>
-                            </div>
-                            <div class="header__content">
-                                <span>В корзине: </span>
-                                <span class="goods-count">10</span>
-                                <span> товаров</span>
-                                <a href="#">ОФОРМИТЬ</a>
-                            </div>
+                        <button class="btn btn-default">РЕГИСТРАЦИЯ</button>
+                    </div>
+                    <div class="header__basket basket-full">
+                        <div class="header__img">
+                            <a href="#">
+                                <span class="icon icon-basket-full"></span>
+                            </a>
                         </div>
-                        <div class="header__control">
-                            <div class="header__toggle country toggle">
-                                <button class="btn btn-toggle">
-                                    <img src="./assets/images/icons/icon-country.png" alt="country flag">
-                                    <span class="icon icon-arrow-down"></span>
-                                </button>
-                                <div class="dropdown">
-                                    <ul>
-                                        <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
-                                        <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
-                                        <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="header__toggle currency toggle">
-                                <button class="btn btn-toggle">
-                                    <span>USD</span>
-                                    <span class="icon icon-arrow-down"></span>
-                                </button>
-                                <div class="dropdown">
-                                    <ul>
-                                        <li>
-                                            <span>usd</span>
-                                        </li>
-                                        <li>
-                                            <span>ru</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                        <div class="header__content">
+                            <span>В корзине: </span>
+                            <span class="goods-count">10</span>
+                            <span> товаров</span>
+                            <a href="#">ОФОРМИТЬ</a>
+                        </div>
+                    </div>
+                    <div class="header__control">
+                        <div class="header__toggle country toggle">
+                            <button class="btn btn-toggle">
+                                <img src="./assets/images/icons/icon-country.png" alt="country flag">
+                                <span class="icon icon-arrow-down"></span>
+                            </button>
+                            <div class="dropdown">
+                                <ul>
+                                    <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
+                                    <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
+                                    <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
+                                </ul>
                             </div>
                         </div>
+                        <div class="header__toggle currency toggle">
+                            <button class="btn btn-toggle">
+                                <span>USD</span>
+                                <span class="icon icon-arrow-down"></span>
+                            </button>
+                            <div class="dropdown">
+                                <ul>
+                                    <li>
+                                        <span>usd</span>
+                                    </li>
+                                    <li>
+                                        <span>ru</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     </div>
             </header>
             <div class="main-wrap">
@@ -880,6 +892,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="layout__content_link">
+                                    <a href="#" class="btn btn-default">ЕЩЕ ТОВАРЫ</a>
+                                </div>
                             </div>
                             <div class="layout__aside">
                                 <div class="layout__soc">
@@ -1062,6 +1077,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="layout__content_link">
+                                    <a href="#" class="btn btn-default">ЕЩЕ ТОВАРЫ</a>
+                                </div>
                             </div>
                             <div class="layout__aside">
                                 <div class="layout__soc">
@@ -1187,9 +1205,9 @@
                                     <li><a href="#" class="soc-btn instagram"></a></li>
                                 </ul>
                             </div>
-                            <div class="footer__nav">
+                            <div class="footer__nav footer-money">
                                 <div class="footer__nav_title">
-                                    <span>МЫ В СОЦСЕТЯХ</span>
+                                    <span>мы принимаем</span>
                                 </div>
                                 <ul class="footer__nav_links d-flex d-wrap links-none">
                                     <li><span class="icon icon-wm"></span></li>

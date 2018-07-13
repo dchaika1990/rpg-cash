@@ -64,7 +64,7 @@ $(document).ready(function () {
         var countShownBlocks = Math.floor(widthBoxScrollBody/230);
 
         countClickNext = lengthBoxScrollBody - countShownBlocks;
-        console.log(countClickPrev, countClickNext, widthBoxScrollBody, lengthBoxScrollBody, countShownBlocks);
+        // console.log(countClickPrev, countClickNext, widthBoxScrollBody, lengthBoxScrollBody, countShownBlocks);
     };
 
     $('.slider_dots-next').on('click', function (e) {
@@ -171,18 +171,38 @@ $(document).ready(function () {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 2
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 800,
                 settings: {
                     slidesToShow: 1
                 }
             }
         ]
+    });
+
+    // Clipping goods
+
+    function clippingGoods( html , count ) {
+        html.each(function () {
+            var good = $(this).find('.best-good');
+            if ( good.length > count ){
+                var notNeedTags =  good.splice(count);
+                for ( var i = 0; i <  notNeedTags.length; i++ ){
+                    notNeedTags[i].remove();
+                }
+
+                $(this).find('.layout__content').append('<div class="layout__content_link"><a href="#" class="btn btn-default">ПОКАЗАТЬ ЕЩЕ</a></div>')
+            }
+        })
+    }
+
+    $(window).on('load',function () {
+       if ( $(window).length < 1024 ) clippingGoods( $('.layout__goods.best'), 4)
     });
 
 });
