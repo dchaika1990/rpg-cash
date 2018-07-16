@@ -677,7 +677,7 @@ label{
 
   &__logo{
     color: @colorWhite;
-    width: 21%;
+    width: 23%;
 
     &:hover{
       text-decoration: none;
@@ -1388,7 +1388,7 @@ label{
 
 /*PAGES*/
 
-//Main
+// Main
 
 .main-wrap{
   padding: 0 30px;
@@ -1402,6 +1402,11 @@ label{
   background: url("../../images/temp/bg-good-best.png") no-repeat center;
   position: relative;
   margin-bottom: 10px;
+  justify-content: space-around;
+
+  &.hidden{
+    display: none;
+  }
 
   &::after{
     position: absolute;
@@ -1931,6 +1936,8 @@ label{
   &__aside{
     flex-shrink: 0;
     width: 260px;
+    display: flex;
+    justify-content: center;
 
     .btn.btn-default{
       color: @colorRed;
@@ -2115,6 +2122,10 @@ label{
     padding-left: 6px;
     position: relative;
 
+    &.hidden{
+      display: none;
+    }
+
     &::before{
       position: absolute;
       content: '';
@@ -2218,6 +2229,7 @@ label{
     height: 350px;
     padding: 20px;
     position: relative;
+    width: 242px;
 
     &::before,
     &::after{
@@ -2285,6 +2297,10 @@ label{
 }
 
 
+// Card product
+
+
+
 
 /* Media */
 
@@ -2292,7 +2308,34 @@ label{
   .dot-wrap{
     width: 230px;
   }
+  .header{
+    &__right-nav{
+      width: 24%;
+    }
+    .header__content{
+      padding-right: 5px;
+    }
+  }
   .layout{
+    &__content_link{
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 25px;
+
+      .btn.btn-default{
+        color: @colorRed;
+
+        &:hover{
+          color: @colorBlueAside;
+        }
+      }
+    }
+    &__goods{
+      .layout__content{
+        justify-content: space-around;
+      }
+    }
     &__slider_wrap{
       overflow: hidden;
     }
@@ -2301,6 +2344,20 @@ label{
 
       .dot.active::before{
         background-image: url("../../images/temp/border-slider-dots-big.png");
+      }
+    }
+  }
+
+  .nav-list{
+    & > li{
+      &::after{
+        right: -21px;
+      }
+      &:nth-child(2) + li {
+        margin-left: 25px;
+      }
+      & + li{
+        margin-left: 25px;
       }
     }
   }
@@ -2612,19 +2669,6 @@ label{
       margin-bottom: 15px;
     }
 
-    &__content_link{
-      width: 100%;
-      text-align: center;
-      margin-bottom: 25px;
-
-      .btn.btn-default{
-        color: @colorRed;
-
-        &:hover{
-          color: @colorBlueAside;
-        }
-      }
-    }
     &__block-title{
       .btn{
         display: none;
@@ -2661,7 +2705,7 @@ label{
   }
 }
 
-@media (max-width: 648px) {
+@media (max-width: 768px) {
   .header{
     background-image: url("../../images/temp/bg-heade-mob.png");
     padding-left: 10px;
@@ -2789,6 +2833,7 @@ label{
         }
 
         &__news_block__date{
+          max-width: 65px;
           font-size: @sizeBtn;
 
           .day{
@@ -3037,6 +3082,19 @@ label{
   }
   .icon.icon-pp::before{
     background: url('../../images/icons/icon-pp-mob.png') no-repeat center;
+  }
+}
+
+@media(max-width: 650px) {
+  .layout{
+    &__slider_big_wrap .slider-prev {
+      left: ~'calc( 50% - 112px )'!important;
+      transform: translateX(-50%)!important;
+    }
+    &__slider_big_wrap .slider-next {
+      right: ~'calc( 50% - 112px )'!important;
+      transform: translateX(+50%)!important;
+    }
   }
 }
 
