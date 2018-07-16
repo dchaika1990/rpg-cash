@@ -12,3 +12,4 @@ prepros-6.config
 .idea
 *.txt
 node_modules/
+*.json
