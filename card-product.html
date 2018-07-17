@@ -15,12 +15,17 @@
 
     <!-- Slick css -->
     <link rel="stylesheet" href="./assets/styles/css/Slick/slick.css">
+    <!-- FormStyler -->
+    <link rel="stylesheet" href="./assets/styles/css/Formstyler/jquery.formstyler.css">
+    <link rel="stylesheet" href="./assets/styles/css/Formstyler/jquery.formstyler.theme.css">
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/styles/css/main.css">
 
 
     <!-- jQuery -->
     <script src="./assets/scripts/jQuery/jquery-3.3.1.min.js"></script>
+    <!-- FormStyler -->
+    <script src="./assets/scripts/Formstyler/jquery.formstyler.min.js"></script>
     <!-- Slick js -->
     <script src="./assets/scripts/Slick/slick.min.js"></script>
     <!-- VK API -->
@@ -320,7 +325,7 @@
                             <img src="./assets/images/icons/icon-country.png" alt="country flag">
                             <span class="icon icon-arrow-down"></span>
                         </button>
-                        <div class="dropdown">
+                        <div class="dropdown-btn">
                             <ul>
                                 <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
                                 <li><img src="./assets/images/icons/icon-country.png" alt="country flag"></li>
@@ -333,7 +338,7 @@
                             <span>USD</span>
                             <span class="icon icon-arrow-down"></span>
                         </button>
-                        <div class="dropdown">
+                        <div class="dropdown-btn">
                             <ul>
                                 <li>
                                     <span>usd</span>
@@ -489,7 +494,7 @@
                 </ul>
             </nav>
             <div class="main">
-                <div class="layout layout-big">
+                <div class="layout layout-big product-head">
                     <ul class="breadcrumb">
                         <li>
                             <a href="#">Главная</a>
@@ -505,24 +510,25 @@
                         <div class="card-option__left">
                             <div class="card-option__rating">
                                 <ul class="stars">
-                                    <li class="active"></li>
-                                    <li class="active"></li>
-                                    <li class="active"></li>
-                                    <li class="active"></li>
-                                    <li></li>
+                                    <li class="icon icon-stars active"></li>
+                                    <li class="icon icon-stars active"></li>
+                                    <li class="icon icon-stars active"></li>
+                                    <li class="icon icon-stars active"></li>
+                                    <li class="icon icon-stars"></li>
                                 </ul>
                                 <span class="rating-number">4.1</span>
                             </div>
                             <div class="icon-link">
                                 <span>Отзывы </span>
-                                <span class="icon icon-reviews"> </span>
-                                <span class="reviews-count">32</span>
+                                <span class="icon icon-reviews-black"> </span>
+                                <a href="#" class="reviews-count">32</a>
                             </div>
                         </div>
                         <div class="card-option__center">
                             <div class="icon-link">
-                                <span>В желаниях у </span>
-                                <span class="wants">28</span>
+                                <span>В желаниях у</span>
+                                <span>&nbsp</span>
+                                <a href="#" class="wants"> 28</a>
                             </div>
                             <a href="#" class="btn btn-default">
                                 <span class="icon icon-star"></span>
@@ -535,14 +541,164 @@
                     </div>
                     <div class="nav-product">
                         <ul class="nav-product__list">
-                            <li>О ТОВАРЕ</li>
-                            <li>УСЛОВИЯ</li>
-                            <li>СРОК ВЫПОЛНЕНИЯ</li>
-                            <li>ОТЗЫВЫ</li>
-                            <li>ИЗОБРАЖЕНИЯ</li>
+                            <li class="active">
+                                <a href="#">О ТОВАРЕ</a>
+                            </li>
+                            <li>
+                                <a href="#">УСЛОВИЯ</a>
+                            </li>
+                            <li>
+                                <a href="#">СРОК ВЫПОЛНЕНИЯ</a>
+                            </li>
+                            <li>
+                                <a href="#">ОТЗЫВЫ</a>
+                            </li>
+                            <li>
+                                <a href="#">ИЗОБРАЖЕНИЯ</a>
+                            </li>
                         </ul>
-                        <div class="nav-product__share">
-                            <span></span>
+                        <ul class="nav-product__share">
+                            <li class="icon icon-share"></li>
+                            <li>
+                                <a href="#" class="icon icon-share-f"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon icon-share-tw"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon icon-share-g"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon icon-share-b"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="layout layout-big product-content">
+                    <div class="layout__block-left">
+                        <div class="product-image">
+                            <img src="./assets/images/temp/product-image.png" alt="image">
+                        </div>
+                        <div class="product-about">
+                            <p>EVE Online — массовая многопользовательская онлайн-игра с элементами  ролевой игры, стратегии и космического симулятора. Игра разработана исландской компанией CCP Games. С мая по декабрь 2003 издавалась Simon & Schuster Interactive (впоследствии CCP выкупила права на распространение). Игровой клиент, дополнения и обновления к нему бесплатны, оплачивается месячная подписка.</p>
+                            <p>Существует 14 дневный бесплатный пробный период (с ограниченными возможностями по развитию) и покупка месячной подписки за внутри- игровую валюту. EVE Online — массовая многопользовательская онлайн-игра с элементами  ролевой игры,</p>
+                        </div>
+                    </div>
+                    <div class="layout__block-right">
+                        <div class="product-title">
+                            <span>Название товара может быть длинным</span>
+                        </div>
+                        <div class="layout__block_inner">
+                            <div class="layout__block_inner__left">
+                                <div class="layout__block_inner__title">
+                                    <span>Обязательные опции:</span>
+                                </div>
+                                <div class="form-group">
+                                    <span>Название опции</span>
+                                    <select name="option-name" id="option-name">
+                                        <option value="1">Предоставить</option>
+                                        <option value="1">Предоставить</option>
+                                        <option value="1">Предоставить</option>
+                                        <option value="1">Предоставить</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <span>Название опции</span>
+                                    <label><input type="checkbox" name="checkbox1"> Выбрать один или несколько</label>
+                                    <label><input type="checkbox" name="checkbox1"> Выбрать один или несколько</label>
+                                </div>
+                                <div class="form-group radio-group">
+                                    <span>Название опции</span>
+                                    <label><input type="radio" name="radio1"> Выбрать один</label>
+                                    <label><input type="radio" name="radio1"> Выбрать один</label>
+                                </div>
+                                <div class="form-group">
+                                    <span>Название опции</span>
+                                    <textarea class="form-control" name="textarea"></textarea>
+                                </div>
+                            </div>
+                            <div class="layout__block_inner__right">
+                                <div class="layout__block_inner__title">
+                                    <span>Дополнительные опции:</span>
+                                </div>
+                                <div class="option-block">
+                                    <div class="form-group">
+                                        <label><input type="checkbox" name="option1"> В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                    </div>
+                                    <div class="option-block__price">
+                                        <span>+25%</span>
+                                        <span>к цене</span>
+                                    </div>
+                                </div>
+                                <div class="option-block">
+                                    <div class="form-group">
+                                        <label><input type="checkbox" name="option1"> В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                    </div>
+                                    <div class="option-block__price">
+                                        <span>+25%</span>
+                                        <span>к цене</span>
+                                    </div>
+                                </div>
+                                <div class="option-block">
+                                    <div class="form-group">
+                                        <label><input type="checkbox" name="option1"> В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                    </div>
+                                    <div class="option-block__price">
+                                        <span>+25%</span>
+                                        <span>к цене</span>
+                                    </div>
+                                </div>
+                                <div class="option-block">
+                                    <div class="form-group">
+                                        <label><input type="checkbox" name="option1"> В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                    </div>
+                                    <div class="option-block__price">
+                                        <span>+25%</span>
+                                        <span>к цене</span>
+                                    </div>
+                                </div>
+                                <div class="option-block">
+                                    <div class="form-group">
+                                        <label><input type="checkbox" name="option1"> В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                    </div>
+                                    <div class="option-block__price">
+                                        <span>+25%</span>
+                                        <span>к цене</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layout__block_inner">
+                            <div class="layout__block_inner_block">
+                                <div class="layout__block_inner_block_title">
+                                    <span class="icon icon-pay"></span>
+                                    <span>Выберите способ оплаты:</span>
+                                </div>
+                                <div class="form-group">
+                                    <select name="option-pay" id="pay">
+                                        <option></option>
+                                        <option class="qivi" value="qivi"></option>
+                                        <option class="pp" value="payPaul"></option>
+                                        <option class="visa" value="visa"></option>
+                                        <option class="wm" value="webMoney"></option>
+                                        <option class="mc" value="mc"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layout__block_inner_block">
+                                <div class="form-group">
+                                    <label>Количество: <input  type="number" name="number"></label>
+                                </div>
+                                <div class="layout__block_inner_block_price">
+                                    <span>Цена:</span>
+                                    <span class="product-price">12.345</span>
+                                    <span>руб.</span>
+                                </div>
+                            </div>
+                            <div class="layout__block_inner_block">
+                                <div class="btn btn-default">ДОБАВИТЬ В КОРЗИНУ</div>
+                                <div class="btn btn-primary">ОФОРМИТЬ ЗАКАЗ</div>
+                            </div>
                         </div>
                     </div>
                 </div>
