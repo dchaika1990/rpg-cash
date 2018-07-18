@@ -232,7 +232,15 @@ $(document).ready(function () {
         dots: false,
         infinite: true,
         slidesToShow: 2,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     // Goods slider Biggest
@@ -240,7 +248,15 @@ $(document).ready(function () {
         dots: false,
         infinite: true,
         slidesToShow: 5,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 4
+                }
+            }
+        ]
     });
 
     // Clipping goods
