@@ -227,6 +227,22 @@ $(document).ready(function () {
         ]
     });
 
+    // With two products
+    $('.layout__slider_small_wrap .layout__slider_content').slick({
+        dots: false,
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1
+    });
+
+    // Goods slider Biggest
+    $('.layout__slider_biggest_wrap .layout__slider_content').slick({
+        dots: false,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1
+    });
+
     // Clipping goods
 
     function clippingGoods( html , findHtml, count ) {
@@ -265,7 +281,9 @@ $(document).ready(function () {
     });
 
     // FormStyler
-    $('select, [type="checkbox"], [type="radio"], [type="number"]').styler();
+    $('select, [type="checkbox"], [type="radio"], [type="number"]').styler({
+        selectSearch: true,
+    });
 
     // Option block price checked
 
