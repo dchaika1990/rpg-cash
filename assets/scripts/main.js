@@ -239,6 +239,18 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 1
                 }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1
+                }
             }
         ]
     });
@@ -254,6 +266,24 @@ $(document).ready(function () {
                 breakpoint: 1280,
                 settings: {
                     slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1
                 }
             }
         ]
@@ -303,8 +333,15 @@ $(document).ready(function () {
 
     // Option block price checked
 
-    $('.option-block').on('click','label', function () {
-       $(this).closest('.option-block').children('.option-block__price').toggleClass('checked');
+    $('.option-block label').on('click', function () {
+        var priceBlock = $(this).closest('.option-block').children('.option-block__price');
+        $(this).prev().hasClass('checked') ? priceBlock.addClass('checked') : priceBlock.removeClass('checked');
+
+    });
+
+    $('.option-block .jq-checkbox').on('click', function () {
+        var priceBlock = $(this).closest('.option-block').children('.option-block__price');
+        $(this).hasClass('checked') ? priceBlock.addClass('checked') : priceBlock.removeClass('checked');
     });
 
     // Pay select
@@ -318,5 +355,14 @@ $(document).ready(function () {
        }
     });
 
+    // Change place of card name
 
+    function changeTitlePlace() {
+        var needTitle = $('.product-content .product-title').html();
+        $('.card-option .product-title').html( needTitle );
+    }
+
+    $(window).on('load resize', function () {
+       if ( $(window).width() < 1025 )  changeTitlePlace();
+    });
 });
