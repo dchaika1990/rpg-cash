@@ -2,6 +2,7 @@
 .gradient-text {
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
+  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1492,6 +1493,7 @@ label {
           flex-direction: column;
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
+  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 14px;
@@ -1768,6 +1770,7 @@ label {
           flex-direction: column;
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
+  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2253,6 +2256,9 @@ label {
   margin-right: 15px;
   position: relative;
 }
+.layout__goods.best {
+  width: 100%;
+}
 .layout__goods::after {
   content: '';
   position: absolute;
@@ -2270,6 +2276,7 @@ label {
 .layout__goods.popular .layout__block-title span {
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
+  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2301,6 +2308,9 @@ label {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
+}
+.layout__news {
   width: 100%;
 }
 .layout__aside-title {
@@ -2651,6 +2661,7 @@ label {
 .layout__goods.sale .layout__block-title span {
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
+  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2820,10 +2831,7 @@ label {
           flex-shrink: 0;
 }
 .layout.layout-big.product-content .layout__block-right {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  width: 66%;
   padding-left: 25px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2844,6 +2852,7 @@ label {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
 }
 .layout.layout-big.product-content .layout__block_inner__title {
   font-size: 20px;
@@ -2972,7 +2981,7 @@ label {
           justify-content: center;
 }
 .layout.layout-big.product-content .layout__block_inner_block:last-child {
-  width: 23%;
+  width: 26%;
   margin-right: 11px;
 }
 .layout.layout-big.product-content .layout__block_inner_block:last-child .btn.btn-default {
@@ -3036,7 +3045,7 @@ label {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  width: 115px;
+  width: 117px;
   min-width: auto;
   color: #ff7f00;
   font-family: 'Exo 2', sans-serif;
@@ -3155,6 +3164,13 @@ label {
 @media (max-width: 1440px) {
   .dot-wrap {
     width: 230px;
+    -webkit-box-flex: unset;
+    -webkit-flex-grow: unset;
+        -ms-flex-positive: unset;
+            flex-grow: unset;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
   }
   .header__right-nav {
     width: 24%;
@@ -3181,9 +3197,6 @@ label {
   }
   .layout__slider_wrap {
     overflow: hidden;
-  }
-  .layout__slider_dots {
-    right: auto;
   }
   .layout__slider_dots .dot.active::before {
     background-image: url("../../images/temp/border-slider-dots-big.png");
@@ -3289,6 +3302,10 @@ label {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    width: 100%;
+  }
+  .layout.layout-big.product-content .layout__block-right {
+    padding-left: 0;
     width: 100%;
   }
   .layout.layout-big.bkg.two-products .layout__goods.popular {
@@ -3594,9 +3611,11 @@ label {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
   .layout.layout-big.product-content .layout__block-right {
     padding-left: 0;
+    width: 100%;
   }
   .layout.layout-big.product-content .layout__block-right .product-title {
     display: none;
@@ -3641,8 +3660,9 @@ label {
     width: 100%;
   }
   .layout.layout-big.product-content .layout__block_inner_block:last-child {
-    width: 192px;
+    width: auto;
     margin-top: 35px;
+    margin-right: 0;
   }
   .layout.layout-big.product-content .layout__block_inner_block:last-child .btn.btn-primary {
     margin-top: 10px;
@@ -3741,6 +3761,8 @@ label {
     margin-top: 40px;
     margin-bottom: 30px;
     font-weight: 700;
+    width: 100%;
+    text-align: center;
   }
   .card-option__rating {
     margin-bottom: 20px;
@@ -3921,6 +3943,7 @@ label {
   }
   .layout__slider_wrapper {
     width: 100%;
+    margin-right: 0;
   }
   .layout__block {
     -webkit-flex-wrap: wrap;
@@ -4102,6 +4125,7 @@ label {
   .layout.layout-big.aside-none .layout__block-title span {
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
     background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
+    background: -ms-linear-gradient(to right, transparent, transparent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -4153,6 +4177,7 @@ label {
   .best-good__title span {
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
     background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
+    background: -ms-linear-gradient(to right, transparent, transparent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -4222,6 +4247,7 @@ label {
   .footer__logo_text span:last-child {
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
     background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
+    background: -ms-linear-gradient(to right, transparent, transparent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 20px;

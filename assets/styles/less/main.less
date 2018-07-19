@@ -50,6 +50,7 @@
 
 .gradient-text{
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
+  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2288,6 +2289,10 @@ label{
     margin-right: 15px;
     position: relative;
 
+    &.best{
+      width: 100%;
+    }
+
     &::after{
       content: '';
       position: absolute;
@@ -2351,6 +2356,10 @@ label{
   }
 
   // News
+
+  &__news{
+    width: 100%;
+  }
 
   &__aside-title{
     text-transform: uppercase;
@@ -2849,7 +2858,7 @@ label{
         flex-shrink: 0;
       }
       &__block-right{
-        flex-grow: 1;
+        width: 66%;
         padding-left: 25px;
         display: flex;
         flex-direction: column;
@@ -2857,6 +2866,7 @@ label{
       }
       &__block_inner{
         display: flex;
+        width: 100%;
 
         &__title{
           font-size: 20px;
@@ -2959,7 +2969,7 @@ label{
           }
 
           &:last-child{
-            width: 23%;
+            width: 26%;
             margin-right: 11px;
 
             .btn.btn-default{
@@ -3013,7 +3023,7 @@ label{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 115px;
+    width: 117px;
     min-width: auto;
     color: @colorOrange;
     font-family: @fontTitle;
@@ -3126,6 +3136,8 @@ label{
 @media (max-width: 1440px) {
   .dot-wrap{
     width: 230px;
+    flex-grow: unset;
+    flex-shrink: 0;
   }
   .header{
     &__right-nav{
@@ -3159,7 +3171,6 @@ label{
       overflow: hidden;
     }
     &__slider_dots{
-      right: auto;
 
       .dot.active::before{
         background-image: url("../../images/temp/border-slider-dots-big.png");
@@ -3283,6 +3294,10 @@ label{
       .layout{
         &__block-left{
           display: flex;
+          width: 100%;
+        }
+        &__block-right{
+          padding-left: 0;
           width: 100%;
         }
       }
@@ -3600,9 +3615,11 @@ label{
       .layout{
         &__block-left{
           flex-direction: column;
+          width: 100%;
         }
         &__block-right{
           padding-left: 0;
+          width: 100%;
 
           .product-title{
             display: none;
@@ -3639,8 +3656,9 @@ label{
             width: 100%;
 
             &:last-child{
-              width: 192px;
+              width: auto;
               margin-top: 35px;
+              margin-right: 0;
 
               .btn.btn-primary{
                 margin-top: 10px;
@@ -3749,6 +3767,8 @@ label{
       margin-top: 40px;
       margin-bottom: 30px;
       font-weight: 700;
+      width: 100%;
+      text-align: center;
     }
 
     &__rating{
@@ -3944,6 +3964,7 @@ label{
     }
     &__slider_wrapper{
       width: 100%;
+      margin-right: 0;
     }
     &__block{
       flex-wrap: wrap;
