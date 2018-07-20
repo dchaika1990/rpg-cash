@@ -2,7 +2,6 @@
 .gradient-text {
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
-  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1493,7 +1492,6 @@ label {
           flex-direction: column;
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
-  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 14px;
@@ -1770,7 +1768,6 @@ label {
           flex-direction: column;
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
-  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1851,7 +1848,7 @@ label {
   left: 0;
 }
 .layout.layout-big.bkg {
-  background: url("../../images/temp/bg-popular.png") no-repeat center / cover;
+  background: url("../../images/temp/bg-popular-big.png") no-repeat center / cover;
   position: relative;
   padding-bottom: 25px;
 }
@@ -2276,7 +2273,6 @@ label {
 .layout__goods.popular .layout__block-title span {
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
-  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2661,7 +2657,6 @@ label {
 .layout__goods.sale .layout__block-title span {
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
-  background: -ms-linear-gradient(to right, transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -3023,6 +3018,9 @@ label {
   margin-left: 13px;
   line-height: 32px;
 }
+.card-option .icon.icon-star {
+  height: 100%;
+}
 .card-option .icon-link {
   font-weight: 400;
   font-size: 20px;
@@ -3331,6 +3329,23 @@ label {
     margin-left: 33px;
     margin-top: -5px;
   }
+  .layout .slider-block {
+    padding: 20px 10px 85px 10px;
+    text-align: center;
+  }
+  .layout__slider_subtitle {
+    margin-top: 20px;
+  }
+  .layout__slider_text {
+    width: 100%;
+    padding: 0 30px;
+  }
+  .layout__slider_link {
+    margin-bottom: 20px;
+  }
+  .layout__slider_big_wrap {
+    margin-bottom: 15px;
+  }
   .footer__wrap {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -3341,8 +3356,8 @@ label {
     bottom: 0;
   }
   .footer__left {
-    width: 35%;
-    padding-right: 20px;
+    width: 40%;
+    padding-right: 35px;
   }
   .footer__center {
     width: 60%;
@@ -3357,7 +3372,6 @@ label {
             flex-wrap: wrap;
   }
   .footer__logo_text {
-    margin-left: 0;
     margin-top: 10px;
   }
   .footer__text {
@@ -3573,23 +3587,6 @@ label {
   .layout__block::after {
     bottom: -38px;
   }
-  .layout .slider-block {
-    padding: 20px 10px 85px 10px;
-    text-align: center;
-  }
-  .layout__slider_subtitle {
-    margin-top: 20px;
-  }
-  .layout__slider_text {
-    width: 100%;
-    padding: 0 30px;
-  }
-  .layout__slider_link {
-    margin-bottom: 20px;
-  }
-  .layout__slider_big_wrap {
-    margin-bottom: 15px;
-  }
   .layout__block-title .btn {
     display: none;
   }
@@ -3726,6 +3723,22 @@ label {
     background: url("../../images/temp/bg-footer-mob-left.png") no-repeat top left;
     top: -2px;
     left: 0;
+  }
+  .footer__logo_wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer__logo {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .footer__logo_text {
+    margin-left: 0;
   }
   .footer__wrap {
     padding-left: 30px;
@@ -4125,7 +4138,6 @@ label {
   .layout.layout-big.aside-none .layout__block-title span {
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
     background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
-    background: -ms-linear-gradient(to right, transparent, transparent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -4177,7 +4189,6 @@ label {
   .best-good__title span {
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
     background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
-    background: -ms-linear-gradient(to right, transparent, transparent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -4247,7 +4258,6 @@ label {
   .footer__logo_text span:last-child {
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffb900), to(#ff8c00));
     background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
-    background: -ms-linear-gradient(to right, transparent, transparent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 20px;
@@ -4386,5 +4396,23 @@ label {
     -webkit-transform: translateY(-50%) translateX(50%);
         -ms-transform: translateY(-50%) translateX(50%);
             transform: translateY(-50%) translateX(50%);
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  .advertising__left {
+    background: transparent;
+    color: #ffbf00;
+  }
+  .layout__goods.popular .layout__block-title span {
+    background: transparent;
+  }
+  .layout.layout-big .layout__block-title span {
+    background: transparent;
+    color: #ff7f00;
+  }
+  .footer__logo_text {
+    color: #ffbf00;
+    background: transparent;
   }
 }
