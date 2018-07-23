@@ -1655,10 +1655,13 @@ label{
 .best-good{
   width: 177px;
   height: 282px;
-  background: url("../../images/temp/bg-good-best.png") no-repeat center;
   position: relative;
   margin-bottom: 10px;
   justify-content: space-around;
+
+  &.eve{
+    background: url("../../images/temp/bg-good-best.png") no-repeat center;
+  }
 
   &.hidden{
     display: none;
@@ -3132,6 +3135,76 @@ label{
 
     li + li{
       margin-left: 4px;
+    }
+  }
+}
+
+
+/*
+*   Catalog
+*/
+
+.best-good{
+  &.middle{
+    width: 294px;
+    height: 495px;
+    background-size: 100%;
+
+    &.eve{
+      background-image: url("../../images/temp/bg-best-good-big-borderNone.png");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &::after{
+      content: none;
+    }
+
+    &.border{
+      background-image: url("../../images/temp/bg-best-good-big.png");
+    }
+
+    .best-good{
+      &__content{
+        border-width: 4px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 95%;
+        height: 84%;
+        top: 30px;
+        clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
+      }
+      &__title{
+        font-size: 27px;
+        line-height: 30px;
+        padding: 24px 0;
+
+        span{
+          .gradient-text;
+        }
+      }
+    }
+  }
+}
+
+.layout{
+  .breadcrumb{
+    margin-top: 20px;
+    padding-left: 27px;
+  }
+}
+
+.catalog{
+  .best-good{
+    margin-bottom: 0;
+  }
+  .layout{
+    &__block{
+      margin-top: 10px;
+    }
+    &__goods{
+      padding-right: 65px;
+      margin-right: 0;
     }
   }
 }
