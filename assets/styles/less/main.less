@@ -1658,9 +1658,12 @@ label{
   position: relative;
   margin-bottom: 10px;
   justify-content: space-around;
+  background: url("../../images/temp/bg-good-best.png") no-repeat center;
 
   &.eve{
-    background: url("../../images/temp/bg-good-best.png") no-repeat center;
+    .best-good__content{
+      background-image: url("../../images/temp/bg-game1.png");
+    }
   }
 
   &.hidden{
@@ -1686,8 +1689,11 @@ label{
     left: 50%;
     transform: translateX(-50%);
     clip-path: polygon(0 0, 100% 0, 100% 87%, 50% 100%, 0 87%);
-    background: url("../../images/temp/bg-game1.png");
     border-top: 2px solid transparent;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
   }
 
   &__title{
@@ -3149,11 +3155,14 @@ label{
     width: 294px;
     height: 495px;
     background-size: 100%;
+    background-image: url("../../images/temp/bg-best-good-big-borderNone.png");
+    background-position: center;
+    background-repeat: no-repeat;
 
     &.eve{
-      background-image: url("../../images/temp/bg-best-good-big-borderNone.png");
-      background-position: center;
-      background-repeat: no-repeat;
+      .best-good__content{
+        background-image: url("../../images/temp/bg-game-middle.png");
+      }
     }
 
     &::after{
@@ -3197,14 +3206,212 @@ label{
 .catalog{
   .best-good{
     margin-bottom: 0;
+
+    &:hover .best-good__dropdown{
+      display: block;
+      z-index: 20;
+      opacity: 1;
+      transform: none;
+    }
+
+    &__dropdown{
+      z-index: -10;
+      opacity: 0;
+      transform: translateY(200px);
+      transition: all .3s ease-in-out;
+      position: absolute;
+      top: 59%;
+      left: 2.4%;
+      right: 2.4%;
+      background-color: @colorWhite;
+    }
+
+    &__dropdown-wrap{
+      position: relative;
+      font-size: 14px;
+      color: @colorBlue;
+      padding: 10px 0;
+
+      &::before{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 64px;
+        top: -64px;
+        left: 0;
+        right: 0;
+        background: url("../../images/temp/preview-before.png") no-repeat center;
+      }
+
+      &::after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 80px;
+        bottom: -70px;
+        left: 0;
+        right: 0;
+        background: url("../../images/temp/preview-after.png") no-repeat center;
+      }
+    }
+    &__type{
+      position: relative;
+      display: flex;
+      text-transform: capitalize;
+      justify-content: center;
+      padding: 0 42px;
+
+      &::before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 12px;
+        background: url("../../images/temp/type-of-game-before.png") no-repeat center;
+      }
+
+      &::after{
+        position: absolute;
+        content: '';
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 12px;
+        background: url("../../images/temp/type-of-game-after.png") no-repeat center;
+      }
+
+      li{
+        position: relative;
+
+        & + li{
+          margin-left: 10px;
+          &::before{
+            position: absolute;
+            content: '/';
+            color: @colorGold;
+            font-size: 14px;
+            top: 0;
+            bottom: 0;
+            left: -8px;
+          }
+        }
+      }
+
+    }
+
+    &__options{
+      padding-left: 25px;
+      padding-right: 25px;
+      margin-top: 36px;
+
+      li{
+        & + li{
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &__link{
+      text-align: center;
+      margin-top: 22px;
+
+      .btn.btn-primary{
+        width: 196px;
+        padding-left: 0;
+        padding-right: 0;
+        letter-spacing: -0.3px;
+        color: @colorWhite;
+
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .add-content{
+    background-color: @colorOrange;
+    color: @colorWhite;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: @fontBody;
+    padding: 24px 20px;
+    box-shadow: 0px 4px 14px 0px rgba(255,127,0,.5);
+    transition: all .2s ease-in-out;
+
+    &:hover{
+      box-shadow: 0px 4px 14px 0px rgba(255,127,0,.9);
+    }
   }
   .layout{
     &__block{
       margin-top: 10px;
+      flex-direction: column;
     }
     &__goods{
       padding-right: 65px;
       margin-right: 0;
+    }
+    &__text-about{
+      padding-right: 65px;
+
+      section{
+        margin-top: 53px;
+
+        &.hidden{
+          display: none;
+        }
+      }
+      &__title{
+        font-family: @fontTitle;
+        font-size: 28px;
+        color: @colorOrange;
+        font-weight: bold;
+        line-height: 32px;
+
+        .color-blue{
+          color: @colorBlueAside;
+        }
+      }
+      &__content{
+        margin-top: 25px;
+
+        p + p{
+          margin-top: 20px;
+        }
+
+        li{
+          position: relative;
+          padding-left: 30px;
+
+          &::before{
+            position: absolute;
+            content: '';
+            left: 13px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            background: url("../../images/icons/list-about.png") no-repeat center;
+          }
+
+          & + li{
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .layout__content_link{
+        display: block;
+        text-align: center;
+        margin-top: 26px;
+        margin-bottom: 20px;
+      }
     }
   }
 }
@@ -3986,6 +4193,15 @@ label{
     }
   }
 
+  .catalog{
+    .layout{
+      &__goods,
+      &__text-about{
+        padding-right: 0;
+      }
+    }
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -4278,8 +4494,8 @@ label{
   }
 
   .best-good{
-    width: 300px;
-    height: 500px;
+    width: 294px;
+    height: 495px;
     background-size: contain;
     background-image: url("../../images/temp/bg-best-good-big.png");
 
@@ -4289,9 +4505,9 @@ label{
 
     &__content{
       background-size: cover;
-      width: 283px;
-      height: 420px;
-      top: 34px;
+      width: 95%;
+      height: 84%;
+      top: 30px;
       clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
       border-width: 4px;
     }
@@ -4427,6 +4643,46 @@ label{
     .soc-btn{
       width: 48px;
       height: 48px;
+    }
+  }
+
+  .catalog{
+    .best-good{
+      &.middle{
+        background-image: url("../../images/temp/bg-best-good-big-no-top.png");
+
+        .best-good__content{
+          height: 83%;
+        }
+      }
+    }
+    .layout{
+      &__block{
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      &__block-title{
+        span{
+          &::before,
+          &::after{
+            content: '';
+          }
+        }
+      }
+
+      &__text-about{
+        margin-top: 15px;
+
+        &__content{
+          li{
+            padding-left: 0;
+
+            &::before{
+              content: none;
+            }
+          }
+        }
+      }
     }
   }
 

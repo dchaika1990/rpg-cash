@@ -383,4 +383,54 @@ $(document).ready(function () {
     $(window).on('load resize', function () {
        if ( $(window).width() < 1025 )  changeTitlePlace();
     });
+
+    // Catalog
+
+    // Goods
+
+    $(window).on('load resize', function () {
+        if ( $(window).width()  > 607 ){
+            clippingGoods( '.catalog .layout__content', '.best-good', 12 );
+        } else {
+            clippingGoods( '.catalog .layout__content', '.best-good', 7 );
+        }
+    });
+
+    var stepDesctop = 12;
+    var stepMob = 7;
+
+    function addGoods( step, num ) {
+        clippingGoods( '.catalog .layout__content', '.best-good', num + step );
+    }
+
+    $('.catalog .layout__add-content').on('click', function () {
+        if ( $(window).width()  > 607 ) {
+            addGoods( stepDesctop, 12 );
+            stepDesctop += 12;
+        } else {
+            addGoods( stepMob, 7 );
+            stepMob += 7;
+        }
+
+    });
+
+    // Turn off links goods
+
+    $('.catalog .best-good__content').on('click',function (e) {
+        if ( $(window).width() < 1024 )  e.preventDefault();
+    });
+
+    // Text about
+
+    $(window).on('load', function () {
+        clippingGoods( '.layout__text-about', 'section', 2 );
+    });
+
+    var stepAboutText = 2;
+
+    $('.catalog .layout__text-about button').on('click', function () {
+        clippingGoods( '.catalog .layout__text-about', 'section', 2 + stepAboutText );
+        stepAboutText += 2;
+    });
+
 });

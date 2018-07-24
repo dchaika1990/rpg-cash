@@ -1649,9 +1649,10 @@ label {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-}
-.best-good.eve {
   background: url("../../images/temp/bg-good-best.png") no-repeat center;
+}
+.best-good.eve .best-good__content {
+  background-image: url("../../images/temp/bg-game1.png");
 }
 .best-good.hidden {
   display: none;
@@ -1679,8 +1680,10 @@ label {
           transform: translateX(-50%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 50% 100%, 0 87%);
           clip-path: polygon(0 0, 100% 0, 100% 87%, 50% 100%, 0 87%);
-  background: url("../../images/temp/bg-game1.png");
   border-top: 2px solid transparent;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .best-good__title {
   font-size: 16px;
@@ -3167,11 +3170,12 @@ label {
   width: 294px;
   height: 495px;
   background-size: 100%;
-}
-.best-good.middle.eve {
   background-image: url("../../images/temp/bg-best-good-big-borderNone.png");
   background-position: center;
   background-repeat: no-repeat;
+}
+.best-good.middle.eve .best-good__content {
+  background-image: url("../../images/temp/bg-game-middle.png");
 }
 .best-good.middle::after {
   content: none;
@@ -3207,12 +3211,215 @@ label {
 .catalog .best-good {
   margin-bottom: 0;
 }
+.catalog .best-good:hover .best-good__dropdown {
+  display: block;
+  z-index: 20;
+  opacity: 1;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+.catalog .best-good__dropdown {
+  z-index: -10;
+  opacity: 0;
+  -webkit-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+          transform: translateY(200px);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 59%;
+  left: 2.4%;
+  right: 2.4%;
+  background-color: #fff;
+}
+.catalog .best-good__dropdown-wrap {
+  position: relative;
+  font-size: 14px;
+  color: #3a5072;
+  padding: 10px 0;
+}
+.catalog .best-good__dropdown-wrap::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 64px;
+  top: -64px;
+  left: 0;
+  right: 0;
+  background: url("../../images/temp/preview-before.png") no-repeat center;
+}
+.catalog .best-good__dropdown-wrap::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 80px;
+  bottom: -70px;
+  left: 0;
+  right: 0;
+  background: url("../../images/temp/preview-after.png") no-repeat center;
+}
+.catalog .best-good__type {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-transform: capitalize;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 42px;
+}
+.catalog .best-good__type::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 44px;
+  height: 12px;
+  background: url("../../images/temp/type-of-game-before.png") no-repeat center;
+}
+.catalog .best-good__type::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 44px;
+  height: 12px;
+  background: url("../../images/temp/type-of-game-after.png") no-repeat center;
+}
+.catalog .best-good__type li {
+  position: relative;
+}
+.catalog .best-good__type li + li {
+  margin-left: 10px;
+}
+.catalog .best-good__type li + li::before {
+  position: absolute;
+  content: '/';
+  color: #ffbf00;
+  font-size: 14px;
+  top: 0;
+  bottom: 0;
+  left: -8px;
+}
+.catalog .best-good__options {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 36px;
+}
+.catalog .best-good__options li + li {
+  margin-top: 10px;
+}
+.catalog .best-good__link {
+  text-align: center;
+  margin-top: 22px;
+}
+.catalog .best-good__link .btn.btn-primary {
+  width: 196px;
+  padding-left: 0;
+  padding-right: 0;
+  letter-spacing: -0.3px;
+  color: #fff;
+}
+.catalog .best-good__link .btn.btn-primary:hover {
+  text-decoration: none;
+}
+.catalog .add-content {
+  background-color: #ff7f00;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  font-family: 'PT Sans', sans-serif;
+  padding: 24px 20px;
+  -webkit-box-shadow: 0px 4px 14px 0px rgba(255, 127, 0, 0.5);
+          box-shadow: 0px 4px 14px 0px rgba(255, 127, 0, 0.5);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.catalog .add-content:hover {
+  -webkit-box-shadow: 0px 4px 14px 0px rgba(255, 127, 0, 0.9);
+          box-shadow: 0px 4px 14px 0px rgba(255, 127, 0, 0.9);
+}
 .catalog .layout__block {
   margin-top: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .catalog .layout__goods {
   padding-right: 65px;
   margin-right: 0;
+}
+.catalog .layout__text-about {
+  padding-right: 65px;
+}
+.catalog .layout__text-about section {
+  margin-top: 53px;
+}
+.catalog .layout__text-about section.hidden {
+  display: none;
+}
+.catalog .layout__text-about__title {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 28px;
+  color: #ff7f00;
+  font-weight: bold;
+  line-height: 32px;
+}
+.catalog .layout__text-about__title .color-blue {
+  color: #054c7a;
+}
+.catalog .layout__text-about__content {
+  margin-top: 25px;
+}
+.catalog .layout__text-about__content p + p {
+  margin-top: 20px;
+}
+.catalog .layout__text-about__content li {
+  position: relative;
+  padding-left: 30px;
+}
+.catalog .layout__text-about__content li::before {
+  position: absolute;
+  content: '';
+  left: 13px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  background: url("../../images/icons/list-about.png") no-repeat center;
+}
+.catalog .layout__text-about__content li + li {
+  margin-top: 20px;
+}
+.catalog .layout__text-about .layout__content_link {
+  display: block;
+  text-align: center;
+  margin-top: 26px;
+  margin-bottom: 20px;
 }
 /* Media */
 @media (max-width: 1440px) {
@@ -3955,6 +4162,10 @@ label {
   .nav-product__list li:hover a {
     color: #054c7a;
   }
+  .catalog .layout__goods,
+  .catalog .layout__text-about {
+    padding-right: 0;
+  }
 }
 @media (max-width: 768px) {
   .header {
@@ -4221,8 +4432,8 @@ label {
     margin-top: 25px;
   }
   .best-good {
-    width: 300px;
-    height: 500px;
+    width: 294px;
+    height: 495px;
     background-size: contain;
     background-image: url("../../images/temp/bg-best-good-big.png");
   }
@@ -4231,9 +4442,9 @@ label {
   }
   .best-good__content {
     background-size: cover;
-    width: 283px;
-    height: 420px;
-    top: 34px;
+    width: 95%;
+    height: 84%;
+    top: 30px;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
             clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
     border-width: 4px;
@@ -4376,6 +4587,29 @@ label {
   .footer .soc-btn {
     width: 48px;
     height: 48px;
+  }
+  .catalog .best-good.middle {
+    background-image: url("../../images/temp/bg-best-good-big-no-top.png");
+  }
+  .catalog .best-good.middle .best-good__content {
+    height: 83%;
+  }
+  .catalog .layout__block {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .catalog .layout__block-title span::before,
+  .catalog .layout__block-title span::after {
+    content: '';
+  }
+  .catalog .layout__text-about {
+    margin-top: 15px;
+  }
+  .catalog .layout__text-about__content li {
+    padding-left: 0;
+  }
+  .catalog .layout__text-about__content li::before {
+    content: none;
   }
   .soc-btn.vk:before {
     background: url('../../images/icons/icon-vk-mob.png') no-repeat center;
