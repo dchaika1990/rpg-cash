@@ -4690,6 +4690,10 @@ label {
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */
+  .catalog .best-good.middle .best-good__title span {
+    background: transparent;
+    color: #ffbf00;
+  }
   .advertising__left {
     background: transparent;
     color: #ffbf00;
@@ -4701,7 +4705,12 @@ label {
     background: transparent;
     color: #ff7f00;
   }
-  .footer__logo_text {
+  .footer__logo_text,
+  .footer__logo_text span {
+    color: #ffbf00;
+    background: transparent;
+  }
+  .footer__logo_text span:last-child {
     color: #ffbf00;
     background: transparent;
   }
