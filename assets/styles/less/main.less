@@ -294,7 +294,7 @@ label{
   }
 }
 
-.layout-big{
+.layout.layout-big{
   .breadcrumb{
     padding-left: 70px;
   }
@@ -345,6 +345,14 @@ label{
     position: absolute;
   }
 
+  &.icon-delete{
+    width: 28px;
+    height: 28px;
+
+    &::before{
+      background: url("../../images/icons/icon-delete.png") no-repeat center;
+    }
+  }
   &.icon-reviews::before{
     background: url("../../images/icons/icon-reviews.png") no-repeat center;
   }
@@ -3204,6 +3212,8 @@ label{
 }
 
 .catalog{
+  margin-top: 30px;
+
   .best-good{
     margin-bottom: 0;
 
@@ -3412,6 +3422,507 @@ label{
         margin-top: 26px;
         margin-bottom: 20px;
       }
+    }
+  }
+}
+
+// Basket first
+
+.basket{
+  margin-top: 37px;
+  flex-wrap: wrap;
+
+  &.layout.layout-big{
+    margin-left: 60px;
+    margin-right: 50px;
+  }
+
+  &__wrap{
+    box-shadow: 0px 1px 5px 3px #d2d9dd;
+    padding-left: 70px;
+    padding-right: 70px;
+    width: 100%;
+    padding-bottom: 8px;
+    background-color: @colorWhite;
+    border: 1px solid @colorOrange;
+    border-top-width: 4px;
+  }
+  &__title{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    margin-top: -12px;
+    color: @colorWhite;
+
+    .gold{
+      color: @colorGold;
+    }
+
+    & > span{
+      letter-spacing: 0.4px;
+      display: inline-block;
+      padding: 17px 20px;
+      background: url("../../images/temp/bg-basket-title.png") repeat-x center;
+      position: relative;
+      font-family: @fontTitle;
+
+      &::before{
+        position: absolute;
+        content: '';
+        left: -122px;
+        top: 0;
+        width: 122px;
+        height: 70px;
+        background: url("../../images/temp/bg-basket-title-before.png") no-repeat center;
+      }
+
+      &::after{
+        position: absolute;
+        content: '';
+        right: -121px;
+        top: 0;
+        width: 121px;
+        height: 70px;
+        background: url("../../images/temp/bg-basket-title-after.png") no-repeat center;
+      }
+    }
+  }
+
+  &__preview{
+    height: 129px;
+    box-shadow: 0px 1px 5px 3px #d2d9dd;
+    position: relative;
+    display: flex;
+    margin-top: 50px;
+    border: 1px solid @colorGold;
+
+    .icon-delete{
+      position: absolute;
+      right: 45px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      cursor: pointer;
+    }
+
+    &::before{
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 151px;
+      background: url("../../images/temp/bg-basket-preview-left.png") no-repeat center;
+    }
+
+    &::after{
+      position: absolute;
+      content: '';
+      right: -1px;
+      top: -1px;
+      bottom: -1px;
+      width: 60px;
+      background: url("../../images/temp/bg-basket-preview-right.png") no-repeat center;
+    }
+
+    &_img{
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      opacity: 1;
+      padding-left: 80px;
+      //border: 1px solid @colorOrange;
+      //border-right: none;
+
+      a{
+        display: inline-block;
+
+        img{
+          height: 100px;
+        }
+      }
+    }
+
+    &_title{
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 64px;
+
+      &_top{
+        margin-top: -15px;
+
+        a{
+          font-size: 19px;
+          color: @colorRed;
+          font-weight: 700;
+        }
+      }
+      &_bottom{
+        font-size: 14px;
+        color: @colorBlueAside;
+        font-family: @fontTitle;
+      }
+    }
+
+    &_price{
+      width: 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 9px;
+
+      &_old{
+        margin-top: -20px;
+        text-align: center;
+        font-size: 13px;
+
+        & > span{
+          text-decoration: line-through;
+        }
+
+        .price-new{
+          font-size: 15px;
+          font-weight: 700;
+        }
+      }
+
+      &_new{
+        font-size: 16px;
+
+        .price-new{
+          color: @colorRed;
+          font-weight: 700;
+        }
+      }
+    }
+
+    &_total-wrap{
+      width: 33%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .form-group{
+        padding: 0;
+        border: none;
+        margin-left: 50px;
+      }
+    }
+
+    &_total{
+      margin-left: 35px;
+
+      &_top{
+        font-family: @fontTitle;
+        font-size: 20px;
+        font-weight: 700;
+        color: orange;
+      }
+
+      &_bottom{
+        font-size: 16px;
+        line-height: 20px;
+
+        .total-price{
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 22px;
+          font-family: @fontTitle;
+        }
+      }
+    }
+  }
+
+  &__forms{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__title{
+      font-size: 20px;
+      font-family: 'Exo 2', sans-serif;
+      margin-bottom: 13px;
+    }
+
+    &__left{
+      width: 50%;
+      padding-right: 35px;
+
+      .basket__forms__title{
+        color: @colorOrange;
+      }
+
+      .form-group.radio-group label{
+        width: auto;
+
+        & + label{
+          margin-left: 22px;
+        }
+      }
+
+      .form-group:last-child{
+        border: none;
+      }
+    }
+
+    &__right{
+      width: 46%;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .option-block:last-child{
+        border: none;
+      }
+
+      .form-group{
+        border: none;
+      }
+
+      .basket__forms__title{
+        color: @colorBlueAside;
+      }
+    }
+
+    &__bottom{
+      width: 100%;
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .basket__forms__title{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .form-group-add{
+        width: 48.5%;
+        height: 80px;
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin-top: 11px;
+
+        &__price-wrap{
+          margin-left: auto;
+          font-size: 16px;
+
+          .price{
+            color: @colorRed;
+            font-weight: 700;
+          }
+        }
+
+        label{
+          top: -10px;
+          left: 47px;
+          position: absolute;
+        }
+
+        .jq-checkbox{
+          margin-right: 20px;
+        }
+
+        .jq-selectbox{
+          width: 328px;
+        }
+      }
+    }
+
+    .option-block{
+      border-bottom: 1px dashed #d3d7dd;
+    }
+  }
+
+  &__total{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    display: flex;
+    padding-left: 70px;
+    padding-right: 55px;
+    align-items: center;
+    height: 115px;
+    background-color: #3a5072;
+    width: 100%;
+    justify-content: space-between;
+
+    &::before{
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 26.5%;
+      transform: translateY(-50%);
+      width: 727px;
+      height: 144px;
+      background: url("../../images/temp/bg-basket-total.png") no-repeat center;
+    }
+
+    &_title{
+      font-family: @fontTitle;
+      z-index: 1;
+      font-size: 37px;
+      font-weight: bold;
+      line-height: 43px;
+      margin-left: 17%;
+
+      span{
+        color: @colorOrange;
+      }
+
+      .price{
+        color: @colorBlueAside;
+        padding-left: 25px;
+      }
+
+      .currency{
+        color: @colorBlueAside;
+        font-weight: 400;
+        font-size: 30px;
+      }
+    }
+
+    .btn-primary{
+      &:hover{
+        text-decoration: none;
+      }
+    }
+
+    .btn-default{
+      position: relative;
+      width: 211px;
+      font-size: 16px;
+      color: @colorWhite;
+
+      &:hover{
+        color: @colorGold;
+      }
+
+      &::before{
+        position: absolute;
+        content: '';
+        left: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 15px;
+        background: url("../../images/icons/icon-quotes-right-gold.png") no-repeat center;
+      }
+    }
+  }
+}
+
+.layout{
+  &.layout-big.bkg.sale-set{
+    margin-bottom: 50px;
+
+    .layout{
+      &__block{
+        &::after{
+          position: absolute;
+          content: '';
+          width: 326px;
+          height: 216px;
+          top: -95px;
+          right: -215px;
+          background: url(../../images/temp/block-after.png) no-repeat center;
+          z-index: 20;
+        }
+      }
+      &__block-title{
+        span{
+          .gradient-text;
+
+          &::before{
+            background: url(../../images/icons/icon-quotes-left-white.png) no-repeat center;
+          }
+
+          &::after{
+            background: url(../../images/icons/icon-quotes-right-white.png) no-repeat center;
+          }
+        }
+      }
+      &__content{
+        padding-left: 30px;
+      }
+      &__goods{
+        width: 100%;
+        margin-right: 0;
+      }
+
+      &__sale_price-block{
+        width: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        .btn.btn-primary{
+          padding: 10px;
+          width: 131px;
+          margin-bottom: 20px;
+          margin-top: -125px;
+
+          &:hover{
+            text-decoration: none;
+          }
+        }
+
+        .sale__price{
+          color: #d45900;
+          font-size: 35px;
+          line-height: 35px;
+          position: relative;
+          font-weight: 700;
+
+          &::before{
+            position: absolute;
+            content: '';
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 13px;
+            background: url(../../images/icons/icon-equal.png) no-repeat center;
+          }
+
+          &_currency{
+            font-size: 21px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  &__slider_big_wrap-set{
+    width: ~'calc( 100% - 183px )';
+    position: relative;
+
+    .slider-block{
+      display: flex;
+      background: none;
+      align-items: center;
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 30px!important;
+      justify-content: center;
+    }
+
+    .icon-plus-big{
+      margin: 25px 8px 8px 8px;
+    }
+
+    .good-wrap{
+      min-width: 225px;
+      margin: 0;
     }
   }
 }

@@ -307,6 +307,12 @@ $(document).ready(function () {
         ]
     });
 
+    //Sale-set
+    $('.layout__slider_big_wrap-set .layout__slider_content').slick({
+        dots: false,
+        infinite: true
+    });
+
     // Clipping goods
 
     function clippingGoods( html , findHtml, count ) {
