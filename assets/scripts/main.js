@@ -439,4 +439,38 @@ $(document).ready(function () {
         stepAboutText += 2;
     });
 
+    // Delete icon
+
+    $('.icon-delete').on('click', function () {
+       $(this).closest('.basket__preview').remove();
+    });
+
+    // Create inputs
+
+    $('.basket__forms__left .basket__forms__title_btn').on('click', function () {
+        var formGroups = $(this).closest('.basket__forms__left').find('.form-group');
+        if ( $(this).attr('data-times') == 2 ) {
+            $(this).attr('data-times', 1);
+
+            formGroups.each(function () {
+                var val = $(this).find('input').val();
+                $(this).children().remove();
+                $(this).append('<span>' + val + '</span>');
+            });
+
+        } else {
+            $(this).attr('data-times', 2);
+
+            formGroups.each(function () {
+                var val = $(this).find('span').text();
+                $(this).children().remove();
+                $(this).append('<input value="' + val + '">');
+            });
+        }
+    });
+
+    $('.basket__forms__right .basket__forms__title_btn').on('click', function () {
+        $(this).closest('.basket__forms__right').find('.option-block__wrap').toggleClass('show');
+    });
+
 });

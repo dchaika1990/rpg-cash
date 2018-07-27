@@ -502,7 +502,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="layout layout-big basket basket-first">
+                <div class="layout layout-big basket basket-second">
                     <div class="basket__wrap">
                         <div class="basket__title">
                             <span>Вы <span class="gold">ДОБАВИЛИ</span> ТОВАР В КОРЗИНУ</span>
@@ -552,83 +552,82 @@
                             <div class="basket__forms__left">
                                 <div class="basket__forms__title">
                                     <span>Обязательные опции:</span>
+                                    <button type="button" class="basket__forms__title_btn">Редактировать</button>
                                 </div>
                                 <div class="form-group">
-                                    <span>Название опции</span>
-                                    <select name="option-name" id="option-name">
-                                        <option value="1">Предоставить</option>
-                                        <option value="1">Предоставить</option>
-                                        <option value="1">Предоставить</option>
-                                        <option value="1">Предоставить</option>
-                                    </select>
+                                    <span>Название опции1</span>
                                 </div>
                                 <div class="form-group">
-                                    <span>Название опции</span>
-                                    <label><input type="checkbox" name="checkbox1"> Выбрать один или несколько</label>
-                                    <label><input type="checkbox" name="checkbox1"> Выбрать один или несколько</label>
-                                </div>
-                                <div class="form-group radio-group">
-                                    <span>Название опции</span>
-                                    <label><input type="radio" name="radio1"> Выбрать один</label>
-                                    <label><input type="radio" name="radio1"> Выбрать один</label>
+                                    <span>Название опции2</span>
                                 </div>
                                 <div class="form-group">
-                                    <span>Название опции</span>
-                                    <textarea class="form-control" name="textarea"></textarea>
+                                    <span>Название опции3</span>
                                 </div>
                             </div>
                             <div class="basket__forms__right">
                                 <div class="basket__forms__title">
                                     <span>Дополнительные опции:</span>
+                                    <button type="button" class="basket__forms__title_btn">Редактировать</button>
                                 </div>
-                                <div class="option-block">
+                                <div class="option-block selected">
                                     <div class="form-group">
-                                        <input id="option1" type="checkbox" name="option1">
-                                        <label for="option1">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                        <label >В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
                                     </div>
-                                    <div class="option-block__price">
+                                    <div class="option-block__price checked">
                                         <span>+25%</span>
                                         <span>к цене</span>
                                     </div>
                                 </div>
-                                <div class="option-block">
-                                    <div class="form-group">
-                                        <input type="checkbox" id="option2" name="option2">
-                                        <label for="option2">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                <div class="option-block__wrap">
+                                    <div class="option-block">
+                                        <div class="form-group">
+                                            <input id="option1" type="checkbox" name="option1">
+                                            <label for="option1">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                        </div>
+                                        <div class="option-block__price">
+                                            <span>+25%</span>
+                                            <span>к цене</span>
+                                        </div>
                                     </div>
-                                    <div class="option-block__price">
-                                        <span>+25%</span>
-                                        <span>к цене</span>
+                                    <div class="option-block">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="option2" name="option2">
+                                            <label for="option2">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                        </div>
+                                        <div class="option-block__price">
+                                            <span>+25%</span>
+                                            <span>к цене</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="option-block">
-                                    <div class="form-group">
-                                        <input type="checkbox" id="option3" name="option3">
-                                        <label for="option3">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                    <div class="option-block">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="option3" name="option3">
+                                            <label for="option3">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                        </div>
+                                        <div class="option-block__price">
+                                            <span>+25%</span>
+                                            <span>к цене</span>
+                                        </div>
                                     </div>
-                                    <div class="option-block__price">
-                                        <span>+25%</span>
-                                        <span>к цене</span>
+                                    <div class="option-block">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="option4" name="option4">
+                                            <label for="option4">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                        </div>
+                                        <div class="option-block__price">
+                                            <span>+25%</span>
+                                            <span>к цене</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="option-block">
-                                    <div class="form-group">
-                                        <input type="checkbox" id="option4" name="option4">
-                                        <label for="option4">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
-                                    </div>
-                                    <div class="option-block__price">
-                                        <span>+25%</span>
-                                        <span>к цене</span>
-                                    </div>
-                                </div>
-                                <div class="option-block">
-                                    <div class="form-group">
-                                        <input type="checkbox" id="option5" name="option5">
-                                        <label for="option5">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
-                                    </div>
-                                    <div class="option-block__price">
-                                        <span>+25%</span>
-                                        <span>к цене</span>
+                                    <div class="option-block">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="option5" name="option5">
+                                            <label for="option5">В наличии личные резервы на +50% к серебру из расчета 2 часа/млн.</label>
+                                        </div>
+                                        <div class="option-block__price">
+                                            <span>+25%</span>
+                                            <span>к цене</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

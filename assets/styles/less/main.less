@@ -1,3 +1,6 @@
+@import url("../css/Slick/slick.css");
+@import url("../css/Formstyler/jquery.formstyler.css");
+@import url("../css/Formstyler/jquery.formstyler.theme.css");
 /*VARIABLES START*/
 //Fonts
 @fontBody: 'PT Sans', sans-serif;
@@ -2636,6 +2639,7 @@ label{
       justify-content: center;
       align-items: center;
       margin-left: 10px;
+      padding: 10px 0;
 
       span{
         font-weight: 700;
@@ -3816,7 +3820,8 @@ label{
 
     .btn-default{
       position: relative;
-      width: 211px;
+      min-width: 211px;
+      width: auto;
       font-size: 16px;
       color: @colorWhite;
 
@@ -3837,6 +3842,88 @@ label{
     }
   }
 }
+
+// Basket second
+
+.basket{
+  &.basket-second{
+    .basket__forms{
+      &__left{
+        .form-group{
+          padding-top: 15px;
+          padding-bottom: 15px;
+
+          span{
+            margin-bottom: 0;
+          }
+
+          input{
+            font-size: 15px;
+            font-family: @fontBody;
+            width: 100%;
+            border: 1px solid #808ea4;
+            border-radius: 3px;
+            padding: 5px 10px;
+          }
+        }
+      }
+      &__right{
+        justify-content: flex-start;
+        width: 50%;
+
+        .option-block{
+          padding-right: 0;
+
+          &__price{
+            align-items: flex-end;
+          }
+
+          .form-group{
+            label{
+              margin-left: 0;
+            }
+          }
+
+          &__wrap{
+            display: none;
+
+            .form-group{
+              label{
+                margin-left: 10px;
+              }
+            }
+
+            &.show{
+              display: block;
+            }
+          }
+        }
+      }
+      &__title{
+        justify-content: space-between;
+        display: flex;
+
+        &_btn{
+          font-weight: bold;
+          color: @colorOrange;
+          font-family: @fontTitle;
+          font-size: 17px;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+
+
+    .option-block{
+
+    }
+  }
+}
+
 
 .layout{
   &.layout-big.bkg.sale-set{
@@ -5080,6 +5167,27 @@ label{
         }
       }
     }
+
+    &.basket-second{
+      .basket__forms{
+        &__title{
+          flex-direction: column;
+
+          &_btn{
+            margin-top: 20px;
+          }
+        }
+        &__right{
+          width: 100%;
+        }
+        .option-block{
+
+          &__price{
+            align-items: center;
+          }
+        }
+      }
+    }
   }
 
 }
@@ -5673,6 +5781,25 @@ label{
       }
 
     }
+
+    &.basket-second{
+      .basket__forms{
+
+        .option-block{
+          &.selected{
+            .form-group{
+              label{
+                margin-top: 45px;
+              }
+            }
+            .option-block__price{
+              width: auto;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
   }
 
   .soc-btn.vk:before{
@@ -5757,6 +5884,10 @@ label{
     background: transparent;
   }
   .layout.layout-big .layout__block-title span{
+    background: transparent;
+    color: @colorOrange;
+  }
+  .layout.layout-big.bkg.sale-set .layout__block-title span{
     background: transparent;
     color: @colorOrange;
   }

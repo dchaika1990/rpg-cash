@@ -3849,7 +3849,8 @@ label {
 }
 .basket__total .btn-default {
   position: relative;
-  width: 211px;
+  min-width: 211px;
+  width: auto;
   font-size: 16px;
   color: #fff;
 }
@@ -5736,6 +5737,10 @@ label {
     background: transparent;
   }
   .layout.layout-big .layout__block-title span {
+    background: transparent;
+    color: #ff7f00;
+  }
+  .layout.layout-big.bkg.sale-set .layout__block-title span {
     background: transparent;
     color: #ff7f00;
   }
