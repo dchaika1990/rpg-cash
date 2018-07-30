@@ -473,4 +473,54 @@ $(document).ready(function () {
         $(this).closest('.basket__forms__right').find('.option-block__wrap').toggleClass('show');
     });
 
+    // Cabinet
+    clippingGoods( '.cabinet .order-wrap', '.order-wrap__block', 3 );
+
+    var countOrderBlocks = $('.cabinet .order-wrap .order-wrap__block').length;
+
+    $('.order-wrap__button button').on('click', function () {
+        clippingGoods( '.cabinet .order-wrap', '.order-wrap__block', countOrderBlocks );
+    });
+
+    $('.cabinet .data-change').on('click', function () {
+        var inputs = $(this).closest('.cabinet__block_right').find('.cabinet__block_inputs');
+        var inputsType = inputs.val('data-type');
+
+        if ( $(this).attr('data-times') == 2 ){
+            $(this).attr('data-times', 1);
+            inputs.each(function () {
+                var val = $(this).find('input').val();
+                var inputsType = $(this).attr('type');
+                $(this).children('input').remove();
+                $(this).append('<span>' + val + '</span>');
+                $(this).find('span:last-child').attr('data-type', inputsType).addClass('inputs');
+            });
+
+        } else {
+            $(this).attr('data-times', 2);
+
+            inputs.each(function () {
+                var val = $(this).find('.inputs').text();
+                var inputsType = $(this).attr('data-type');
+                $(this).children('.inputs').remove();
+                $(this).append('<input value="' + val + '">');
+                $(this).find('input').attr('type', inputsType);
+
+                if ( $(this).hasClass('mask-tel') ) $(this).find('input').mask('9-(999)-999-99-99');
+                if ( $(this).hasClass('mask-date') ) $(this).find('input').mask("99.99.9999", {placeholder: "дд.мм.гггг" });
+            });
+        }
+    });
+
+    // Tabs
+
+    $('.aside-bar.tab-header li:not(:first-child)').on('click', function () {
+       var data = $(this).attr('data-tab');
+       $('.layout__content .tab-wrapper').each(function () {
+           $(this).addClass('hidden');
+       });
+       $('.layout__content .tab-wrapper' + '.' + data).removeClass('hidden');
+    });
+
+
 });
