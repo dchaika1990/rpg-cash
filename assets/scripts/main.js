@@ -474,11 +474,12 @@ $(document).ready(function () {
     });
 
     // Cabinet
+
+    var countOrderBlocks = 3;
     clippingGoods( '.cabinet .order-wrap', '.order-wrap__block', 3 );
 
-    var countOrderBlocks = $('.cabinet .order-wrap .order-wrap__block').length;
-
     $('.order-wrap__button button').on('click', function () {
+        countOrderBlocks += 3;
         clippingGoods( '.cabinet .order-wrap', '.order-wrap__block', countOrderBlocks );
     });
 
