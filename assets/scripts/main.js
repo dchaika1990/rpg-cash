@@ -541,4 +541,71 @@ $(document).ready(function () {
         cloneAside();
     });
 
+    // Reviews
+
+    $('.review-block').each(function () {
+        var allText = $(this).find('.review-block__text p').text();
+        var cuttingText = allText.slice(0,184) + '...';
+        $(this).find('.review-block__text p').addClass('hide').slideUp();
+        $(this).find('.review-block__text').append('<p>' + cuttingText + '</p>');
+    });
+
+    $('.review-block__link button').on('click', function () {
+        $(this).closest('.review-block__content').find('.review-block__text p').toggleClass('hide').slideToggle();
+        $(this).closest('.review-block__content').toggleClass('open');
+
+        if ( $(this).attr('data-count') == 1 ) {
+            $(this).attr('data-count', 2);
+            $(this).text('читать далее');
+        } else {
+            $(this).attr('data-count', 1);
+            $(this).text('скрыть');
+        }
+    });
+
+    var stepDesctopRev = 0;
+
+    $(window).on('load resize', function () {
+        if ( $(window).width()  >= 1323 ){
+            stepDesctopRev = 9;
+            clippingGoods( '.reviews .layout__content', '.review-block', 9 );
+        } else if( $(window).width()  <= 642 ){
+            stepDesctopRev = 5;
+            clippingGoods( '.reviews .layout__content', '.review-block', 5 );
+        } else if( $(window).width()  <= 983 ){
+            stepDesctopRev = 8;
+            clippingGoods( '.reviews .layout__content', '.review-block', 8 );
+        }  else if( $(window).width()  <= 1007 ){
+            stepDesctopRev = 9;
+            clippingGoods( '.reviews .layout__content', '.review-block', 9 );
+        } else if ( $(window).width()  < 1340 ) {
+            stepDesctopRev = 8;
+            clippingGoods( '.reviews .layout__content', '.review-block', 8 );
+        }
+    });
+
+    function addRev( step, num ) {
+        clippingGoods( '.reviews .layout__content', '.review-block', num + step );
+    }
+
+    $('.reviews .layout__add-content').on('click', function () {
+        if ( $(window).width()  >= 1340 ) {
+            addRev( 9,  stepDesctopRev);
+            stepDesctopRev += 9;
+        } else  if ( $(window).width()  <= 642 ){
+            addRev( 5,  stepDesctopRev);
+            stepDesctopRev += 5;
+        } else  if ( $(window).width()  <= 983 ){
+            addRev( 8,  stepDesctopRev);
+            stepDesctopRev += 8;
+        } else  if ( $(window).width()  <= 1024 ){
+            addRev( 9,  stepDesctopRev);
+            stepDesctopRev += 9;
+        } else if ( $(window).width()  < 1340 ){
+            addRev( 8,  stepDesctopRev);
+            stepDesctopRev += 8;
+        }
+
+    });
+
 });
