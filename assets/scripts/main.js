@@ -533,7 +533,7 @@ $(document).ready(function () {
     // Mobile-aside
 
     function cloneAside() {
-        var aside = $('.desktop ul');
+        var aside = $('.desktop > ul');
         $('.mobile-aside').append( aside.clone() );
     }
 
@@ -607,5 +607,66 @@ $(document).ready(function () {
         }
 
     });
+
+    // Products list
+
+    var stepDesctopProducts = 0;
+
+    function addProducts( step, num ) {
+        clippingGoods( '.products-list .layout__content', '.good-wrap', num + step );
+    }
+
+    $(window).on('load resize', function () {
+        addProducts( 19,  stepDesctopProducts);
+        stepDesctopProducts += 16;
+    });
+
+    $('.products-list .good-wrap.else').on('click', function () {
+        addProducts( 19,  stepDesctopProducts);
+        stepDesctopProducts += 16;
+    });
+
+    $('.product-aside li').on('click', function () {
+        $(this).children('.dropdown').slideToggle();
+    });
+
+    $('.aside-bar.product-aside').on('click', 'li', function () {
+        $(this).children('.dropdown').slideToggle();
+    });
+
+
+    // Reset btn
+
+    $('.filter .btn-default').on('click', function (e) {
+        e.preventDefault();
+        $(this).closest('.filter')[0].reset();
+        $('.js-select').attr('disabled', true).trigger("refresh");
+        $('.jq-checkbox').attr('disabled', true).trigger("refresh");
+    });
+
+    $('.filter .icon-arrow-down').on('click', function () {
+       $(this).closest('.form-group').find('.form-wrap').slideToggle();
+    });
+
+    // function bringFilter() {
+    //     var asideFilter = $('.filter');
+    //     if ( $('.layout__filter .filter').html() ) {
+    //         if ( !($('.aside-bar.desktop .filter').html()) ) {
+    //             $('.aside-bar.desktop').append( asideFilter);
+    //             console.log(true);
+    //         }
+    //
+    //     } else {
+    //         if ( !($('.layout__filter .filter').html()) ) {
+    //             $('.layout__filter').append( asideFilter );
+    //             console.log(false);
+    //         }
+    //     }
+    // }
+    //
+    // $(window).on('load resize', function () {
+    //     bringFilter();
+    // });
+
 
 });
