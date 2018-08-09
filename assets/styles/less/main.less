@@ -212,12 +212,13 @@ label{
   }
 
   [type='number']{
-    padding-left: 40px;
-    padding-right: 30px;
+    padding-left: 32px;
+    padding-right: 32px;
     font-weight: bold;
     font-size: 16px;
     font-family: @fontTitle;
     color: #333;
+    text-align: center;
   }
 }
 
@@ -1024,7 +1025,7 @@ label{
     top: -2px;
     height: 554px;
     width: 374px;
-    z-index: 20;
+    z-index: 0;
     background: url("../../images/temp/header-bg-left.png") no-repeat center / cover;
   }
 
@@ -4349,6 +4350,7 @@ label{
         width: auto;
         font-family: "Exo 2", sans-serif;
         padding: 0 5px;
+        border-radius: 0;
       }
 
       & + .cabinet__block_inputs{
@@ -4366,6 +4368,9 @@ label{
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+      &.mobile-settings{
+        display: none;
+      }
       button{
         &:first-child{
           margin-bottom: 5px;
@@ -4941,6 +4946,9 @@ label{
 
   &.layout{
     .layout{
+      &__goods{
+        width: 100%;
+      }
       &__block{
         &::after{
           content: none;
@@ -5038,6 +5046,9 @@ label{
 }
 .aside-bar{
   &.product-aside{
+    .jq-selectbox__dropdown{
+      top: 40px!important;
+    }
     & > ul{
       & > li{
         font-weight: bold;
@@ -5190,9 +5201,13 @@ label{
 
   .form-group{
     border-bottom: 1px dashed #d3d7dd;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
+
+    &.open{
+      padding-bottom: 30px;
+    }
 
     .checkbox-group{
       margin-top: 16px;
@@ -5496,7 +5511,7 @@ label{
     position: relative;
 
     &::placeholder{
-      color: @colorBlueAside; 
+      color: @colorBlueAside;
     }
   }
 
@@ -7781,6 +7796,9 @@ label{
 
             &.else{
               height: 385px;
+              &:hover{
+                height: 385px;
+              }
               .good-packman{
                 margin-top: 75px;
                 img{

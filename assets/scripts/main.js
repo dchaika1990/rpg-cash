@@ -692,6 +692,7 @@ $(document).ready(function () {
 
     $('.filter .icon-arrow-down').on('click', function () {
        $(this).closest('.form-group').find('.form-wrap').slideToggle();
+       $(this).closest('.form-group').toggleClass('open');
     });
 
 
