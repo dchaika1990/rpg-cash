@@ -811,10 +811,8 @@ $(document).ready(function () {
         }
 
         if ( form.find('.invalid').length ){
-            console.log(1);
             return false;
         } else {
-            console.log(2);
             $(this).closest('form')[0].reset();
             $('.modal.active').removeClass('active');
             $('.overflow').removeClass('active');
