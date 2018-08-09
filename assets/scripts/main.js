@@ -12,6 +12,7 @@ $(document).ready(function () {
         e.stopPropagation();
         $('.nav-bar__dropdown').removeClass('active');
         $('.overflow').removeClass('active');
+        $('.modal').removeClass('active');
     });
 
     $('.icon-close').on('click', function (e) {
@@ -685,8 +686,8 @@ $(document).ready(function () {
     $('.filter .btn-default').on('click', function (e) {
         e.preventDefault();
         $(this).closest('.filter')[0].reset();
-        $('.js-select').attr('disabled', true).trigger("refresh");
-        $('.jq-checkbox').attr('disabled', true).trigger("refresh");
+        $('input:checkbox').trigger('refresh');
+        $('input:radio').trigger('refresh');
     });
 
     $('.filter .icon-arrow-down').on('click', function () {
@@ -709,7 +710,7 @@ $(document).ready(function () {
         }
     });
 
-    //Triangle og filter
+    //Triangle of filter
 
     $(window).on('load resize', function () {
         var filterWidth = $('.layout__filter').width();
@@ -717,7 +718,6 @@ $(document).ready(function () {
             'border-right': filterWidth / 2 + 'px solid transparent',
             'border-left': filterWidth / 2 + 'px solid transparent'
         });
-        console.log(1)
     });
 
     $('.layout__filter .btn-show').on('click', function () {
@@ -734,5 +734,92 @@ $(document).ready(function () {
        e.preventDefault();
     });
 
+    // Modals
+
+    $('.icon-link.login,.icon-login').on('click', function (e) {
+        e.stopPropagation();
+        $('.overflow').addClass('active');
+        $('.modal.login').addClass('active');
+    });
+
+    $('.btn-registration, .btn-register').on('click', function (e) {
+        e.stopPropagation();
+        $('.overflow').addClass('active');
+        $('.modal.active').removeClass('active');
+        $('.modal.registration').addClass('active');
+    });
+
+    $('.layout__form-reviews .btn-primary').on('click', function (e) {
+        e.stopPropagation();
+        $('.overflow').addClass('active');
+        $('.modal.active').removeClass('active');
+        $('.modal.review').addClass('active');
+    });
+
+    $('.modal').on('click', function (e) {
+        e.stopPropagation();
+    });
+
+    $('.modal__close').on('click', function () {
+        $('.overflow').removeClass('active');
+        $('.modal.active').removeClass('active');
+    });
+
+    $('.modal input[type="tel"]').mask("+7(999)-999-99-99", {placeholder: "+7(___)-___-__-__" });
+
+    // Validation
+
+    $('.modal .send').on('click', function (e) {
+        e.preventDefault();
+        var form = $(this).closest('form');
+        var password = form.find('input[name="password"]');
+        var confirmPassword = form.find('input[name="confirmPassword"]');
+        var email = form.find('input[name="email"]');
+        var select = form.find('select');
+
+        form.find('.invalid').each(function () {
+            $(this).removeClass('invalid')
+        });
+
+
+        form.find('.required').each(function () {
+            var self = $(this);
+
+           if ( !(self.val()) ){
+               self.parent().addClass('invalid');
+           }
+        });
+
+        if ( password.length && confirmPassword.length ){
+            if ( password.val() != confirmPassword.val() ) {
+                password.parent().addClass('invalid');
+                confirmPassword.parent().addClass('invalid');
+            }
+        }
+
+        if ( email.length ) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if ( !re.test(String(email.val()).toLowerCase()) ){
+                email.parent().addClass('invalid');
+            }
+        }
+
+        if ( select.length ) {
+            if (select.parent().hasClass('changed') ) {
+                select.parent().parent().removeClass('invalid');
+            }
+        }
+
+        if ( form.find('.invalid').length ){
+            console.log(1);
+            return false;
+        } else {
+            console.log(2);
+            $(this).closest('form')[0].reset();
+            $('.modal.active').removeClass('active');
+            $('.overflow').removeClass('active');
+            $('input:checkbox').trigger('refresh');
+        }
+    });
 
 });

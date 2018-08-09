@@ -512,6 +512,13 @@ label{
       background: url("../../images/icons/icon-plus-big.png") no-repeat center;
     }
   }
+  &.icon-plus-white{
+    width: 40px;
+    height: 40px;
+    &::before{
+      background: url("../../images/icons/icon-plus-white.png") no-repeat center;
+    }
+  }
   &.icon-equal{
     width: 18px;
     height: 13px;
@@ -1184,6 +1191,7 @@ label{
         align-items: center;
         justify-content: center;
         text-transform: uppercase;
+        padding: 7px 0;
 
         & + li{
           border-top: 1px solid #000;
@@ -2153,6 +2161,7 @@ label{
     min-height: 320px;
     padding: 37px 38px;
     color: @colorWhite;
+    outline: none!important;
   }
 
   &__slider_title{
@@ -5307,6 +5316,244 @@ label{
 }
 
 
+/*
+    MODAL
+ */
+
+.modal{
+  z-index: -1;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  max-height: 100vh;
+  overflow: auto;
+  position: fixed;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background: url('../../images/temp/slider-image.png') center/cover no-repeat / cover;
+
+  &.active{
+    opacity: 1;
+    z-index: 100;
+  }
+
+  &__inner{
+    position: relative;
+    padding: 30px 90px 15px 90px;
+  }
+
+  &__close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+  &__title{
+    font-size: 38px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 50px;
+    font-weight: bold;
+    font-family: @fontTitle;
+    text-shadow: 2px 2px 0px @colorOrange;
+    white-space: nowrap;
+  }
+
+  &__content{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-modal-group{
+    margin-left: 4px;
+    max-width: 290px;
+    max-height: 75px;
+    border: 1px solid blue;
+    transform: skewX(-20deg);
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+
+    &.big{
+      z-index: 0;
+      transform: skewX(-12deg);
+
+      &.invalid{
+        .icon-invalid{
+          top: 4px;
+          transform: none;
+
+          span{
+            transform: skewX(12deg);
+          }
+        }
+      }
+    }
+
+    &.select-box{
+      overflow: visible;
+      z-index: 1;
+
+      .jq-selectbox{
+        z-index: 0;
+
+        li{
+          font-size: 16px;
+          color: @colorBlueAside;
+          &.selected{
+            color: @colorBlueAside;
+          }
+        }
+        &__select-text{
+          transform: skew(20deg);
+        }
+        &.opened{
+          .jq-selectbox__trigger{
+            transform: rotate(180deg) skew(20deg);
+          }
+        }
+        &__trigger{
+          transform: skew(20deg);
+        }
+        &__select{
+          font-size: 16px;
+          padding-left: 20px;
+          color: @colorBlueAside;
+          height: 36px;
+        }
+        &__dropdown{
+          transform: skew(20deg);
+          left: 7%;
+        }
+      }
+    }
+
+    .placeholder{
+      top: 8px;
+      font-size: 25px;
+      color: @colorRed;
+      left: 5px;
+      position: absolute;
+      transform: skewX(20deg);
+      z-index: 11;
+    }
+
+    .icon-invalid{
+      display: none;
+      position: absolute;
+      height: 26px;
+      right: 7px;
+      background-color: @colorRed;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+
+      span{
+        transform: skewX(20deg);
+        color: @colorWhite;
+      }
+    }
+
+    & + .form-modal-group{
+      margin-top: 10px;
+    }
+
+    &.invalid{
+      border-color: @colorRed;
+
+      .icon-invalid{
+        display: flex;
+        width: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4px;
+      }
+    }
+  }
+
+
+
+  textarea.form-modal{
+    width: 114%;
+    resize: none;
+    font-size: 16px;
+    transform: skewX(12deg);
+  }
+  .form-modal{
+    background-color: @colorWhite;
+    width: 109%;
+    transform: skewX(20deg);
+    margin: 0 -10px;
+    padding: 8px 30px;
+    font-size: 16px;
+    color: @colorBlueAside;
+    z-index: 1;
+    position: relative;
+
+    &::placeholder{
+      color: @colorBlueAside; 
+    }
+  }
+
+  &__group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    & + .modal__group{
+      margin-top: 15px;
+    }
+
+    .authentication{
+      color: @colorWhite;
+      font-size: 14px;
+
+      .red{
+        color: @colorRed;
+        font-size: 25px;
+      }
+    }
+
+    a{
+      font-size: 16px;
+      color: @colorWhite;
+    }
+
+    .btn-register{
+      font-size: 16px;
+      color: @colorWhite;
+      text-decoration: underline;
+    }
+
+    label{
+      color: #fff;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-right: 15px;
+    }
+
+    .jq-checkbox{
+      margin-right: 10px;
+      width: 17px;
+      height: 17px;
+      border-radius: 0;
+      border-color: @colorRed;
+
+      &.checked{
+        .jq-checkbox__div{
+          background-size: contain;
+        }
+      }
+    }
+  }
+}
+
 
 /* Media */
 
@@ -5562,6 +5809,7 @@ label{
     .slider-block{
       padding: 20px 10px 85px 10px;
       text-align: center;
+      outline: none;
     }
 
     &__slider_subtitle{
@@ -7600,6 +7848,17 @@ label{
     }
   }
 
+  .modal{
+    min-width: 310px;
+    &__inner{
+      padding: 30px 30px 15px;
+    }
+    &__title{
+      white-space: inherit;
+      font-size: 23px;
+      text-align: center;
+    }
+  }
 
   .soc-btn.vk:before{
     background: url('../../images/icons/icon-vk-mob.png') no-repeat center ;
@@ -7710,5 +7969,7 @@ label{
     background: transparent;
     color: @colorGold;
   }
-
+  .modal .form-modal{
+    z-index: -1!important;
+  }
 }

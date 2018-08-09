@@ -303,10 +303,10 @@
                 </div>
                 <div class="auth-controls">
                     <div class="icon-link login">
-                        <a href="#" class="icon icon-login"></a>
-                        <a href="#">Войти</a>
+                        <a href="javascript:void(0)" class="icon icon-login"></a>
+                        <a href="javascript:void(0)">Войти</a>
                     </div>
-                    <button class="btn btn-default">РЕГИСТРАЦИЯ</button>
+                    <button class="btn btn-default btn-registration">РЕГИСТРАЦИЯ</button>
                 </div>
                 <div class="header__basket basket-full">
                     <div class="header__img">
@@ -1260,5 +1260,141 @@
     </div>
 </div>
 <div class="overflow"></div>
+<div class="modal review">
+    <div class="modal__inner">
+        <div class="modal__close">
+            <div class="icon icon-plus-white"></div>
+        </div>
+        <div class="modal__title">
+            <span>Оставить отзыв</span>
+        </div>
+        <form method="get" class="modal__content">
+            <div class="form-modal-group">
+                <input type="text" name="login" class="form-modal required" placeholder="Логин">
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="form-modal-group">
+                <input type="email" name="email" class="form-modal required" placeholder="Email">
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="form-modal-group select-box">
+                <select name="country" class="required">
+                    <option value="none">Не выбрана</option>
+                    <option value="ukraine">Украина</option>
+                    <option value="russian">Россия</option>
+                    <option value="honduras">Гондурас</option>
+                </select>
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="form-modal-group big">
+                <textarea name="message" class="form-modal required"></textarea>
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="modal__group">
+                <span class="authentication">Поля отмеченные <span class="red">*</span> обязательны для заполнения</span>
+            </div>
+            <div class="modal__group">
+                <button type="button" class="btn btn-primary send">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal registration">
+    <div class="modal__inner">
+        <div class="modal__close">
+            <div class="icon icon-plus-white"></div>
+        </div>
+        <div class="modal__title">
+            <span>Зарегестрироваться</span>
+        </div>
+        <form class="modal__content">
+            <div class="form-modal-group">
+                <input type="text" class="form-modal required" placeholder="Логин">
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="form-modal-group">
+                <input type="password" name="password" class="form-modal required" placeholder="Пароль">
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="form-modal-group">
+                <input type="password" name="confirmPassword" class="form-modal required" placeholder="Повторить пароль">
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="form-modal-group">
+                <input type="email" name="email" class="form-modal required" placeholder="Email">
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="form-modal-group">
+                <input type="tel" class="form-modal" placeholder="Номер телефона">
+            </div>
+            <div class="modal__group">
+                <span class="authentication">Поля отмеченные <span class="red">*</span> обязательны для заполнения</span>
+            </div>
+            <div class="modal__group">
+                <button type="button" class="btn btn-primary send">Подтвердить</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal login">
+    <div class="modal__inner">
+        <div class="modal__close">
+            <div class="icon icon-plus-white"></div>
+        </div>
+        <div class="modal__title">
+            <span>Войти в личный кабинет</span>
+        </div>
+        <form class="modal__content">
+            <div class="form-modal-group">
+                <input type="text" name="login" class="form-modal required" placeholder="Логин">
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="form-modal-group">
+                <input type="password" name="password" class="form-modal required" placeholder="Пароль">
+                <div class="icon-invalid">
+                    <span>!</span>
+                </div>
+                <div class="placeholder">*</div>
+            </div>
+            <div class="modal__group">
+                <label>
+                    <input type="checkbox" class="checkbox-modal"> Запомнить
+                </label>
+                <button type="button" class="btn btn-primary send">Войти</button>
+            </div>
+            <div class="modal__group">
+                <a href="javascript:void(0)">Забыли пароль?</a>
+                <button type="button" class="btn-register">Регистрация</button>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>
