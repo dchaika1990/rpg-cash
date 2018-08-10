@@ -325,7 +325,7 @@
                     <div class="header__toggle country toggle">
                         <button class="btn btn-toggle">
                             <img src="./assets/images/icons/icon-country.png" alt="country flag">
-                            <span class="icon icon-arrow-down"></span>
+                            <!--<span class="icon icon-arrow-down"></span>-->
                         </button>
                         <div class="dropdown-btn">
                             <ul>
@@ -338,7 +338,7 @@
                     <div class="header__toggle currency toggle">
                         <button class="btn btn-toggle">
                             <span>USD</span>
-                            <span class="icon icon-arrow-down"></span>
+                            <!--<span class="icon icon-arrow-down"></span>-->
                         </button>
                         <div class="dropdown-btn">
                             <ul>
@@ -676,16 +676,31 @@
                                     <span class="icon icon-pay"></span>
                                     <span>Выберите способ оплаты:</span>
                                 </div>
-                                <div class="form-group select-red">
-                                    <select name="option-pay" id="pay">
-                                        <!--<option>&nbsp;</option>-->
-                                        <option class="qivi" value="qivi">&nbsp;</option>
-                                        <option class="pp" value="payPaul">&nbsp;</option>
-                                        <option class="visa" value="visa">&nbsp;</option>
-                                        <option class="wm" value="webMoney">&nbsp;</option>
-                                        <option class="mc" value="mc">&nbsp;</option>
-                                    </select>
+                                <div class="value-toggle toggle">
+                                    <button class="btn btn-toggle">
+                                        <span class="wm" data-pay="wm" value="webMoney"></span>
+                                    </button>
+                                    <div class="dropdown-btn">
+                                        <ul>
+                                            <li>
+                                                <span class="wm" data-pay="wm" value="webMoney"></span>
+                                            </li>
+                                            <li>
+                                                <span class="qivi" data-pay="qivi" value="qivi"></span>
+                                            </li>
+                                            <li>
+                                                <span class="pp" data-pay="pp" value="payPaul"></span>
+                                            </li>
+                                            <li>
+                                                <span class="visa" data-pay="visa" value="visa"></span>
+                                            </li>
+                                            <li>
+                                                <span class="mc" data-pay="mc" value="mastercard"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
+                                <input type="hidden" data-pay="wm" value="webMoney" name="option-pay">
                             </div>
                             <div class="layout__block_inner_block">
                                 <div class="form-group">
@@ -1285,7 +1300,7 @@
             </div>
             <div class="form-modal-group select-box">
                 <select name="country" class="required">
-                    <option value="none">Не выбрана</option>
+                    <option selected disabled value="none">Не выбрана</option>
                     <option value="ukraine">Украина</option>
                     <option value="russian">Россия</option>
                     <option value="honduras">Гондурас</option>
@@ -1296,14 +1311,14 @@
                 <div class="placeholder">*</div>
             </div>
             <div class="form-modal-group big">
-                <textarea name="message" class="form-modal required"></textarea>
+                <textarea name="message" placeholder="Сообщение" class="form-modal required"></textarea>
                 <div class="icon-invalid">
                     <span>!</span>
                 </div>
                 <div class="placeholder">*</div>
             </div>
             <div class="modal__group">
-                <span class="authentication">Поля отмеченные <span class="red">*</span> обязательны для заполнения</span>
+                <span class="authentication">Поля отмеченные  <span class="icon icon-auth-star"></span> обязательны для заполнения</span>
             </div>
             <div class="modal__group">
                 <button type="button" class="btn btn-primary send">Отправить</button>
@@ -1352,7 +1367,7 @@
                 <input type="tel" class="form-modal" placeholder="Номер телефона">
             </div>
             <div class="modal__group">
-                <span class="authentication">Поля отмеченные <span class="red">*</span> обязательны для заполнения</span>
+                <span class="authentication">Поля отмеченные <span class="icon icon-auth-star"></span> обязательны для заполнения</span>
             </div>
             <div class="modal__group">
                 <button type="button" class="btn btn-primary send">Подтвердить</button>

@@ -49,8 +49,8 @@ $(document).ready(function () {
     // Toggle btm
     $('.toggle').on('click', function (e) {
         e.stopPropagation();
-
-       $(this).find('.dropdown-btn').toggleClass('active')
+       $(this).find('.dropdown-btn').toggleClass('active');
+       $(this).toggleClass('open');
     });
 
     $(document).on('click', function () {
@@ -59,9 +59,17 @@ $(document).ready(function () {
         });
     });
 
-    $('.dropdown li').on('click',function (e) {
+    $('.toggle li').on('click',function (e) {
         e.stopPropagation();
+        var dataPya = $(this).children().attr('data-pay');
+        var value = $(this).children().attr('value');
+        $(this).closest('.toggle').find('.btn-toggle').html($(this).html());
+        $(this).closest('.toggle').removeClass('open');
         $(this).closest('.dropdown-btn').removeClass('active');
+        $(this).closest('.toggle').parent().find('input[type="hidden"]').attr({
+            'data-pay': dataPya,
+            'value':value
+        })
     });
 
     // Banner slider
@@ -115,25 +123,31 @@ $(document).ready(function () {
 
         var wrapper = $('.layout__slider_wrap').width();
         var childrenLength = $('.layout__slider_dots').children().length;
+        // var childrenWidth = $('.layout__slider_dots').width();
         var childrenWidth = $('.dot-wrap').width();
         var dotsBlock = childrenLength * childrenWidth;
 
-        var transkateX = (dotsBlock - wrapper) / countClickNext ;
 
+        var transkateX = dotsBlock - wrapper - (countClickNext - 1) * childrenWidth ;
+        // var transkateX = (dotsBlock - wrapper) / countClickNext ;
+        // console.log(transkateX,countClickNext);
 
-        if ( countClickNext == 1 ) {
+        if ( countClickPrev == 0 ) {
+            // $('.layout__slider_dots').animate({'left': '-=230'});
             // $('.layout__slider_dots').animate({'right': '0'}).css('left', 'inherit');
             $('.layout__slider_dots').animate({'left': '-' + transkateX + 'px' });
             countClickNext--;
             countClickPrev++;
-        } else if ( countClickNext > 0 ) {
-            // $('.layout__slider_dots').animate({'left': '-=230'});
-            $('.layout__slider_dots').animate({'left': '-' + transkateX + 'px' });
+        } else if ( countClickPrev > 0 ) {
+            $('.layout__slider_dots').animate({'left': '-=230'});
+            // $('.layout__slider_dots').animate({'left': '-' + transkateX + 'px' });
             countClickNext--;
             countClickPrev++;
         } else {
             return false
         }
+
+        console.log(transkateX, countClickPrev);
 
     });
 
@@ -145,22 +159,34 @@ $(document).ready(function () {
         var childrenWidth = $('.dot-wrap').width();
         var dotsBlock = childrenLength * childrenWidth;
 
-        var transkateX = (dotsBlock - wrapper) / countClickPrev ;
+        // var transkateX = (dotsBlock - wrapper) / countClickPrev ;
+        // console.log(transkateX,countClickPrev);
 
-
-        if ( countClickPrev == 1 ) {
-            // $('.layout__slider_dots').animate({'left': '0'}).css('right', 'inherit');
+        if ( countClickPrev == 1 ){
             $('.layout__slider_dots').animate({'left': 0});
             countClickNext++;
             countClickPrev--;
         } else if ( countClickPrev > 0 ) {
-            // $('.layout__slider_dots').animate({'right': '-=230'});
-            $('.layout__slider_dots').animate({'left': '+=' + transkateX + 'px' });
+            $('.layout__slider_dots').animate({'left': '+=230'});
             countClickNext++;
             countClickPrev--;
         } else {
-            return false
+            return false;
         }
+
+        // if ( countClickPrev == 1 ) {
+        //     $('.layout__slider_dots').animate({'left': '0'}).css('right', 'inherit');
+        //     // $('.layout__slider_dots').animate({'left': 0});
+        //     countClickNext++;
+        //     countClickPrev--;
+        // } else if ( countClickPrev > 0 ) {
+        //     // $('.layout__slider_dots').animate({'right': '-=230'});
+        //     $('.layout__slider_dots').animate({'left': '+=' + transkateX + 'px' });
+        //     countClickNext++;
+        //     countClickPrev--;
+        // } else {
+        //     return false
+        // }
 
     });
 
@@ -517,6 +543,7 @@ $(document).ready(function () {
 
     var tabsAside = function(self) {
         var data = self.attr('data-tab');
+        if ( !data.length ) return false;
         $('.layout__content .tab-wrapper').each(function () {
             $(this).addClass('hidden');
         });

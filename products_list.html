@@ -325,7 +325,7 @@
                     <div class="header__toggle country toggle">
                         <button class="btn btn-toggle">
                             <img src="./assets/images/icons/icon-country.png" alt="country flag">
-                            <span class="icon icon-arrow-down"></span>
+                            <!--<span class="icon icon-arrow-down"></span>-->
                         </button>
                         <div class="dropdown-btn">
                             <ul>
@@ -338,7 +338,7 @@
                     <div class="header__toggle currency toggle">
                         <button class="btn btn-toggle">
                             <span>USD</span>
-                            <span class="icon icon-arrow-down"></span>
+                            <!--<span class="icon icon-arrow-down"></span>-->
                         </button>
                         <div class="dropdown-btn">
                             <ul>
@@ -2101,7 +2101,7 @@
             </div>
             <div class="form-modal-group select-box">
                 <select name="country" class="required">
-                    <option value="none">Не выбрана</option>
+                    <option selected disabled value="none">Не выбрана</option>
                     <option value="ukraine">Украина</option>
                     <option value="russian">Россия</option>
                     <option value="honduras">Гондурас</option>
@@ -2112,14 +2112,14 @@
                 <div class="placeholder">*</div>
             </div>
             <div class="form-modal-group big">
-                <textarea name="message" class="form-modal required"></textarea>
+                <textarea name="message" placeholder="Сообщение" class="form-modal required"></textarea>
                 <div class="icon-invalid">
                     <span>!</span>
                 </div>
                 <div class="placeholder">*</div>
             </div>
             <div class="modal__group">
-                <span class="authentication">Поля отмеченные <span class="red">*</span> обязательны для заполнения</span>
+                <span class="authentication">Поля отмеченные  <span class="icon icon-auth-star"></span> обязательны для заполнения</span>
             </div>
             <div class="modal__group">
                 <button type="button" class="btn btn-primary send">Отправить</button>
@@ -2168,7 +2168,7 @@
                 <input type="tel" class="form-modal" placeholder="Номер телефона">
             </div>
             <div class="modal__group">
-                <span class="authentication">Поля отмеченные <span class="red">*</span> обязательны для заполнения</span>
+                <span class="authentication">Поля отмеченные <span class="icon icon-auth-star"></span> обязательны для заполнения</span>
             </div>
             <div class="modal__group">
                 <button type="button" class="btn btn-primary send">Подтвердить</button>
@@ -2233,6 +2233,11 @@
             fromInput.val(ui.values[ 0 ] + ' руб.');
             toInput.val(ui.values[ 1 ] + ' руб.');
 
+            // if ( $(firsthandle).css('left') == $(secondhandle).css('left') ) {
+            //     console.log(11)
+            // }
+
+            // console.log( ui.values[ 0 ] )
         }
 
         function onCreateRange(event, ui) {
