@@ -62,7 +62,7 @@ $(document).ready(function () {
     $('.toggle li').on('click',function (e) {
         e.stopPropagation();
         var dataPya = $(this).children().attr('data-pay');
-        var value = $(this).children().attr('value');
+        var value = $(this).children().attr('data-value');
         $(this).closest('.toggle').find('.btn-toggle').html($(this).html());
         $(this).closest('.toggle').removeClass('open');
         $(this).closest('.dropdown-btn').removeClass('active');
@@ -123,24 +123,18 @@ $(document).ready(function () {
 
         var wrapper = $('.layout__slider_wrap').width();
         var childrenLength = $('.layout__slider_dots').children().length;
-        // var childrenWidth = $('.layout__slider_dots').width();
         var childrenWidth = $('.dot-wrap').width();
         var dotsBlock = childrenLength * childrenWidth;
 
 
         var transkateX = dotsBlock - wrapper - (countClickNext - 1) * childrenWidth ;
-        // var transkateX = (dotsBlock - wrapper) / countClickNext ;
-        // console.log(transkateX,countClickNext);
 
         if ( countClickPrev == 0 ) {
-            // $('.layout__slider_dots').animate({'left': '-=230'});
-            // $('.layout__slider_dots').animate({'right': '0'}).css('left', 'inherit');
             $('.layout__slider_dots').animate({'left': '-' + transkateX + 'px' });
             countClickNext--;
             countClickPrev++;
         } else if ( countClickPrev > 0 ) {
             $('.layout__slider_dots').animate({'left': '-=230'});
-            // $('.layout__slider_dots').animate({'left': '-' + transkateX + 'px' });
             countClickNext--;
             countClickPrev++;
         } else {
@@ -154,14 +148,6 @@ $(document).ready(function () {
     $('.slider_dots-prev').on('click', function (e) {
         e.preventDefault();
 
-        var wrapper = $('.layout__slider_wrap').width();
-        var childrenLength = $('.layout__slider_dots').children().length;
-        var childrenWidth = $('.dot-wrap').width();
-        var dotsBlock = childrenLength * childrenWidth;
-
-        // var transkateX = (dotsBlock - wrapper) / countClickPrev ;
-        // console.log(transkateX,countClickPrev);
-
         if ( countClickPrev == 1 ){
             $('.layout__slider_dots').animate({'left': 0});
             countClickNext++;
@@ -174,19 +160,6 @@ $(document).ready(function () {
             return false;
         }
 
-        // if ( countClickPrev == 1 ) {
-        //     $('.layout__slider_dots').animate({'left': '0'}).css('right', 'inherit');
-        //     // $('.layout__slider_dots').animate({'left': 0});
-        //     countClickNext++;
-        //     countClickPrev--;
-        // } else if ( countClickPrev > 0 ) {
-        //     // $('.layout__slider_dots').animate({'right': '-=230'});
-        //     $('.layout__slider_dots').animate({'left': '+=' + transkateX + 'px' });
-        //     countClickNext++;
-        //     countClickPrev--;
-        // } else {
-        //     return false
-        // }
 
     });
 
@@ -437,7 +410,7 @@ $(document).ready(function () {
     }
 
     $('.catalog .layout__add-content').on('click', function () {
-        if ( $(window).width()  > 607 ) {
+        if ( $(window).width()  > 667 ) {
             addGoods( stepDesctop, 12 );
             stepDesctop += 12;
         } else {
@@ -574,22 +547,39 @@ $(document).ready(function () {
     $('.review-block').each(function () {
         var allText = $(this).find('.review-block__text p').text();
         var cuttingText = allText.slice(0,184) + '...';
-        $(this).find('.review-block__text p').addClass('hide').slideUp();
+        $(this).find('.review-block__text p').addClass('hide');
         $(this).find('.review-block__text').append('<p>' + cuttingText + '</p>');
     });
 
-    $('.review-block__link button').on('click', function () {
-        $(this).closest('.review-block__content').find('.review-block__text p').toggleClass('hide').slideToggle();
+    function hideText() {
+        $('.review-block').each(function () {
+
+            $(this).find('.review-block__text p:first-child').addClass('hide');
+            $(this).find('.review-block__text p:nth-child(2)').removeClass('hide');
+            $(this).find('.review-block__content').removeClass('open');
+            $(this).find('.review-block__link button').attr('data-count', 2).text('читать далее');
+        });
+    }
+
+    $('.review-block__link button').on('click', function (e) {
+        e.stopPropagation();
+        $(this).closest('.review-block__content').find('.review-block__text p').toggleClass('hide');
         $(this).closest('.review-block__content').toggleClass('open');
 
         if ( $(this).attr('data-count') == 1 ) {
             $(this).attr('data-count', 2);
             $(this).text('читать далее');
         } else {
+            hideText();
+            $(this).closest('.review-block__content').find('.review-block__text p').toggleClass('hide');
+            $(this).closest('.review-block__content').toggleClass('open');
             $(this).attr('data-count', 1);
             $(this).text('скрыть');
+
         }
+
     });
+
 
     var stepDesctopRev = 0;
 

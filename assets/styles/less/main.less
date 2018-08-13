@@ -171,6 +171,14 @@ label{
     border-radius: 5px;
     border-color: #808ea4;
     background: @colorWhite;
+    display: flex;
+    align-items: center;
+
+    input{
+      padding-top: 9px;
+      padding-bottom: 10px;
+      line-height: 20px;
+    }
   }
 
   &__spin{
@@ -220,6 +228,8 @@ label{
     font-family: @fontTitle;
     color: #333;
     text-align: center;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -1327,8 +1337,8 @@ label{
     display: inline-block;
     width: 169px;
     height: 159px;
-    right: -31px;
-    top: -31px;
+    right: -35px;
+    top: -35px;
     z-index: 1;
     background: url("../../images/temp/bg-nav-right.png") no-repeat center;
   }
@@ -2572,7 +2582,7 @@ label{
       width: 326px;
       height: 216px;
       bottom: -38px;
-      right: -231px;
+      right: -252px;
       background: url("../../images/temp/block-after.png") no-repeat center;
       z-index: 1;
     }
@@ -2908,6 +2918,8 @@ label{
   &__comments-all{
     text-align: center;
     margin-top: 53px;
+    position: relative;
+    z-index: 2;
   }
 
   &__content_link{
@@ -4767,6 +4779,7 @@ label{
      }
 
     &__content{
+      z-index: 0;
       padding: 0 20px;
       position: absolute;
       top: 10px;
@@ -4873,6 +4886,12 @@ label{
       line-height: 25px;
       letter-spacing: 0.3px;
       min-height: 150px;
+
+      p{
+        &.hide{
+          display: none;
+        }
+      }
     }
 
     &__link{
@@ -5011,6 +5030,8 @@ label{
     &__add-content{
       margin-top: 20px;
       margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
     }
   }
 }
@@ -5776,6 +5797,13 @@ label{
     .header__content{
       padding-right: 5px;
     }
+    .auth-controls{
+      justify-content: flex-end;
+
+      .icon-link{
+        margin-right: 25px;
+      }
+    }
   }
   .layout{
     &__content_link{
@@ -6233,7 +6261,7 @@ label{
         }
         .btn-primary{
           margin-left: 0;
-          margin-top: 30px;
+          margin-top: 21px;
         }
 
       }
@@ -7036,6 +7064,10 @@ label{
         position: relative;
         min-height: 90px;
 
+        .btn.btn-default{
+          width: 125px;
+        }
+
         .form-group{
           span{
             margin-bottom: 0;
@@ -7066,6 +7098,14 @@ label{
         .filter{
           margin-top: 0;
           padding: 0 10px 20px 10px;
+
+          .form-group{
+            padding-bottom: 15px;
+
+            & + .form-group{
+              margin-top: 5px;
+            }
+          }
         }
       }
     }
@@ -7344,6 +7384,12 @@ label{
       padding-right: 0;
       margin-bottom: 40px;
 
+      .product-image{
+        img{
+          height: auto;
+        }
+      }
+
       .layout__block_inner__right{
         .option-block{
           position: relative;
@@ -7456,8 +7502,8 @@ label{
   }
 
   .best-good{
-    margin-left: -15px;
-    margin-right: -15px;
+    //margin-left: -15px;
+    //margin-right: -15px;
     width: 315px;
     height: 495px;
     background-size: contain;
@@ -7612,6 +7658,9 @@ label{
 
   .catalog{
     .best-good{
+      margin-top: -30px;
+      margin-left: 15px;
+      margin-right: 15px;
       &.middle{
         background-image: url("../../images/temp/bg-best-good-big-no-top.png");
 
@@ -7621,10 +7670,13 @@ label{
       }
 
       & + .best-good{
-        margin-top: -30px;
+        //margin-top: -30px;
       }
     }
     .layout{
+      &__content{
+        padding-top: 30px;
+      }
       &__block{
         margin-top: 20px;
         margin-bottom: 10px;
@@ -7733,6 +7785,18 @@ label{
     &.basket-second{
       .basket__forms{
 
+        &__right{
+          .option-block.selected{
+            .form-group{
+              span{
+                margin-left: 0;
+                text-align: center;
+                margin-top: 48px;
+              }
+            }
+          }
+        }
+
         .option-block{
           &.selected{
             .form-group{
@@ -7768,6 +7832,10 @@ label{
           display: flex;
           align-items: center;
           margin-bottom: 15px;
+
+          button{
+            font-size: 14px;
+          }
         }
       }
       &_inputs{
@@ -7897,6 +7965,8 @@ label{
           margin-top: 21px;
           margin-bottom: -12px;
           z-index: 5;
+          padding-left: 10px;
+          padding-right: 10px;
         }
         &_wrap{
           padding-left: 20px;
@@ -8158,6 +8228,10 @@ label{
 }
 
 @media(max-width: 550px) {
+  .catalog .best-good{
+    margin-left: 0;
+    margin-right: 0;
+  }
   .layout{
     &__slider_biggest_wrap .slider-prev {
       left: ~'calc( 50% - 112px )'!important;
@@ -8226,5 +8300,11 @@ label{
   }
   .catalog .best-good__type{
     letter-spacing: -0.6px;
+  }
+  .nav-list{
+    font-size: 14px;
+  }
+  .reviews .review-block{
+    margin-bottom: 25px;
   }
 }
