@@ -479,7 +479,7 @@ $(document).ready(function () {
     clippingGoods( '.cabinet .order-wrap', '.order-wrap__block', 3 );
 
     $('.order-wrap__button button').on('click', function () {
-        countOrderBlocks += 3;
+        countOrderBlocks += 4;
         clippingGoods( '.cabinet .order-wrap', '.order-wrap__block', countOrderBlocks );
     });
 
@@ -837,5 +837,17 @@ $(document).ready(function () {
             $('input:checkbox').trigger('refresh');
         }
     });
+
+    // VK
+
+    if ( document.getElementById('vk_groups') )  {
+        var script = document.createElement("script");
+        script.src = "https://vk.com/js/api/openapi.js?156";
+        script.async = true;
+        script.addEventListener('load', function () {
+            VK.Widgets.Group("vk_groups", {mode: 3}, 20003922)
+        });
+        document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+    }
 
 });

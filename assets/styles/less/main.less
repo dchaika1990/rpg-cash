@@ -51,7 +51,11 @@
 //Line height
 @lhNorm: 18.98px;
 @lhBig: 24.84px;
-
+.gradient-text1{
+  background: linear-gradient(to bottom, #ffcf1a 50%, #ffcb2a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .gradient-text{
   background: linear-gradient(to right, #ffb900 50%, #ff8c00 100%);
   -webkit-background-clip: text;
@@ -245,8 +249,9 @@ label{
       height: 100%;
       width: 100%;
       margin: 0;
-      background: url("../../images/icons/icon-radio-chacked.png") no-repeat center;
+      background: url("../../images/icons/icon-radio-chacked.png") no-repeat center / contain;
       box-shadow: none;
+      background-size: 11px;
     }
   }
 }
@@ -709,7 +714,8 @@ label{
 
   &.btn-primary{
     border-bottom: 3px solid @colorRed;
-    background-color: @colorOrange;
+    //background-color: @colorOrange;
+    background: linear-gradient(to top, #ff8c00 50%, #ffb900 100%);
     color: @colorBlack;
     position: relative;
     padding: 10px 24px;
@@ -717,7 +723,7 @@ label{
     &::before{
       position: absolute;
       content: '';
-      background: url("../../images/temp/bg-btn-left.png") no-repeat left;
+      background: url("../../images/temp/bg-btn-left.png") no-repeat left / cover;
       top: 50%;
       left: 0;
       width: 36px;
@@ -728,7 +734,7 @@ label{
     &::after{
       position: absolute;
       content: '';
-      background: url("../../images/temp/bg-btn-right.png") no-repeat right;
+      background: url("../../images/temp/bg-btn-right.png") no-repeat right / cover;
       top: 50%;
       right: 0;
       width: 35px;
@@ -737,8 +743,18 @@ label{
     }
 
     &:hover{
-      background-color: @colorBlueAside;
+      background: @colorBlueAside;
       color: @colorWhite;
+
+      &::after{
+        background: url("../../images/temp/bg-btn-right-hover.png") no-repeat right / cover;
+        transform: translateY(-60%);
+        height: 46px;
+      }
+
+      &::before{
+        background: url("../../images/temp/bg-btn-left-hover.png") no-repeat left / cover;
+      }
     }
   }
   &.btn-toggle{
@@ -1234,6 +1250,13 @@ label{
     .icon-link{
       font-size: @sizeBodySm;
     }
+
+    .btn.btn-default{
+      &:hover{
+        text-decoration: underline;
+        color: @colorGold;
+      }
+    }
   }
   &__basket{
     display: flex;
@@ -1375,6 +1398,10 @@ label{
       width: 15px;
       height: 19px;
       background: url("../../images/icons/icon-list-bracker.png");
+    }
+
+    span{
+      position: relative;
     }
 
     &::before{
@@ -2009,12 +2036,15 @@ label{
 
   &__title{
     font-size: @sizeBtn;
-    color: @colorGold;
     font-family: @fontTitle;
     font-weight: bold;
     text-align: center;
     padding: 12px 0;
     background-color: rgba(0,0,0,.6);
+
+    span{
+      .gradient-text;
+    }
   }
 
   &.top{
@@ -2081,7 +2111,7 @@ label{
     font-size: @sizeLogoHeaderSubtitle;
     display: flex;
     flex-direction: column;
-    .gradient-text;
+    color: @colorGold;
   }
 
   &__right{
@@ -2090,6 +2120,7 @@ label{
 
   &__title{
     font-size: @sizeBlockTitle;
+    line-height: 28px;
   }
 
   &__date-wrap{
@@ -2160,7 +2191,8 @@ label{
       }
       &__block-title{
         span{
-          .gradient-text;
+          //.gradient-text;
+          color: @colorOrange;
         }
       }
       &__aside-title{
@@ -3604,17 +3636,18 @@ label{
     margin-bottom: 0;
 
     &:hover .best-good__dropdown{
-      //display: block;
+      display: block;
       z-index: 20;
-      opacity: 1;
+      //opacity: 1;
       transform: none;
     }
 
     &__dropdown{
-      z-index: 0;
-      opacity: 0;
-      transform: translateY(200px);
-      transition: all .3s ease-in-out;
+      display: none;
+      //z-index: 0;
+      //opacity: 0;
+      //transform: translateY(200px);
+      //transition: all .3s linear;
       position: absolute;
       top: 59%;
       left: 2.4%;
@@ -5219,6 +5252,12 @@ label{
 
           .good-img{
             height: 135px;
+            margin-top: 5px;
+
+            a{
+              height: 100%;
+              display: inline-block;
+            }
           }
 
           .good-price{
@@ -5446,6 +5485,24 @@ label{
     }
     .range{
       margin-top: 13px;
+      position: relative;
+      .firsthandle-range{
+        font-size: 16px;
+        color: #494949;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+      }
+      .secondhandle-range{
+        font-size: 16px;
+        color: #494949;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        bottom: 15px;
+        right: 0;
+        text-align: right;
+      }
     }
     .range-input-reoup{
       width: 42%;
@@ -5584,7 +5641,7 @@ label{
     line-height: 50px;
     font-weight: bold;
     font-family: @fontTitle;
-    text-shadow: 2px 2px 0px @colorOrange;
+    text-shadow: 1px 1px 0px @colorOrange;
     white-space: nowrap;
   }
 
@@ -5598,7 +5655,7 @@ label{
     margin-left: 4px;
     max-width: 290px;
     max-height: 75px;
-    border: 1px solid blue;
+    border: 1px solid #514d67;
     transform: skewX(-20deg);
     overflow: hidden;
     border-radius: 6px;
@@ -6125,7 +6182,7 @@ label{
 
   .basket{
     &__title{
-      margin-top: -17px;
+      margin-top: -12px;
     }
     &__wrap{
       padding-left: 30px;
@@ -6283,12 +6340,17 @@ label{
     flex-wrap: wrap;
     height: auto;
     padding-bottom: 20px;
-    background-position: left;
+    background: url(../../images/temp/header-bg-center-media.jpg) left no-repeat / cover;
     position: relative;
     border-top: 8px solid @colorGold;
 
     &::before{
-      content: none;
+      content: '';
+      height: 43px;
+      width: 53px;
+      background: url("../../images/temp/brilliant-header-media.png") no-repeat center;
+      top: 0;
+      left: 200px;
     }
     &::after{
       content: none;
@@ -6844,6 +6906,7 @@ label{
       border-width: 1px;
     }
     &__title{
+      margin-top: -17px;
       & > span{
         background-image: url('../../images/temp/bg-basket-mob-title.png');
 
@@ -7151,6 +7214,10 @@ label{
     padding-right: 10px;
     padding-bottom: 10px;
     border-bottom: 9px solid rgba(255,255,255,0.2);
+
+    &::before{
+      content: none;
+    }
 
     &__right-nav{
       padding-bottom: 35px;
@@ -8261,8 +8328,10 @@ label{
     color: @colorGold;
   }
   .advertising__left{
-    background:transparent;
-    color: @colorGold;
+    span{
+      background:transparent;
+      color: @colorGold;
+    }
   }
   .layout__goods.popular .layout__block-title span{
     background: transparent;
@@ -8306,5 +8375,11 @@ label{
   }
   .reviews .review-block{
     margin-bottom: 25px;
+  }
+  .best-good__title{
+    span{
+      background: transparent;
+      color: @colorGold;
+    }
   }
 }

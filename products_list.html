@@ -30,8 +30,6 @@
     <script src="./assets/scripts/Slick/slick.min.js"></script>
     <!-- Masked Input js -->
     <script src="./assets/scripts/mask/jquery.maskedinput.min.js"></script>
-    <!-- VK API -->
-    <script src="https://vk.com/js/api/openapi.js?156"></script>
     <!-- Scripts -->
     <script src="./assets/scripts/main.js"></script>
 </head>
@@ -585,6 +583,8 @@
                             <div class="form-wrap">
                                 <button type="button" class="reset">Сбросить фильтр</button>
                                 <div class="range">
+                                    <span class="firsthandle-range"></span>
+                                    <span class="secondhandle-range"></span>
                                     <div class="add-range-value">
                                         <div class="range-input-reoup">
                                             <input type="text" name="fromValue">
@@ -604,7 +604,7 @@
                             </div>
                             <div class="checkbox-group">
                                 <label><input type="checkbox" name="checkbox1"> Со скидкой</label>
-                                <label><input type="checkbox" name="checkbox1"> "Вмесье дешевле"</label>
+                                <label><input type="checkbox" name="checkbox1"> "Вместе дешевле"</label>
                             </div>
                         </div>
                         <div class="form-reset-btn">
@@ -2133,7 +2133,7 @@
             <div class="icon icon-plus-white"></div>
         </div>
         <div class="modal__title">
-            <span>Зарегестрироваться</span>
+            <span>Зарегистрироваться</span>
         </div>
         <form class="modal__content">
             <div class="form-modal-group">
@@ -2222,10 +2222,15 @@
 
         function changeMinMaxVal(event, ui) {
             var firsthandle = range.slider( "option" ,"firsthandle").find('.min-value'),
-                secondhandle =    range.slider( "option" ,"secondhandle").find('.max-value');
+                secondhandle =    range.slider( "option" ,"secondhandle").find('.max-value'),
+                firsthandleRange = $('.firsthandle-range'),
+                secondhandleRange = $('.secondhandle-range');
 
-            $(firsthandle).text(ui.values[ 0 ]+' руб.');
-            $(secondhandle).text(ui.values[ 1 ]+' руб.');
+            // $(firsthandle).text(ui.values[ 0 ]+' руб.');
+            // $(secondhandle).text(ui.values[ 1 ]+' руб.');
+
+            firsthandleRange.text( ui.values[0] +' руб.' );
+            secondhandleRange.text( ui.values[1] +' руб.' );
 
 
             fromInput.attr('current', ui.values[ 0 ]);
@@ -2233,11 +2238,6 @@
             fromInput.val(ui.values[ 0 ] + ' руб.');
             toInput.val(ui.values[ 1 ] + ' руб.');
 
-            // if ( $(firsthandle).css('left') == $(secondhandle).css('left') ) {
-            //     console.log(11)
-            // }
-
-            // console.log( ui.values[ 0 ] )
         }
 
         function onCreateRange(event, ui) {
@@ -2245,7 +2245,9 @@
                 target = $(event.target),
                 handles = target.find('.ui-slider-handle'),
                 firsthandle = $(handles[0]),
-                secondhandle =  $(handles[1]);
+                secondhandle =  $(handles[1]),
+                firsthandleRange = $('.firsthandle-range'),
+                secondhandleRange = $('.secondhandle-range');
 
             range.slider( "option" ,"firsthandle", firsthandle );
             range.slider( "option" ,"secondhandle", secondhandle );
@@ -2259,8 +2261,10 @@
             firsthandle.addClass('firsthandle');
             secondhandle.addClass('secondhandle');
 
-            firsthandle.append('<span class="min-value">'+ state.values[0] +' руб.</span>');
-            secondhandle.append('<span class="max-value">'+ state.values[1] +' руб.</span>');
+            // firsthandle.append('<span class="min-value">'+ state.values[0] +' руб.</span>');
+            // secondhandle.append('<span class="max-value">'+ state.values[1] +' руб.</span>');
+            firsthandleRange.text( state.values[0] +' руб.' );
+            secondhandleRange.text( state.values[1] +' руб.' );
 
         }
 
