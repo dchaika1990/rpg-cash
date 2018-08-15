@@ -1127,6 +1127,8 @@ label{
   height: 183px;
   padding-left: 80px;
   padding-right: 115px;
+  align-items: center;
+
 
   &::before{
     content: '';
@@ -1159,6 +1161,8 @@ label{
   &__logo{
     color: @colorWhite;
     width: 23%;
+    cursor: pointer;
+    z-index: 5;
 
     &:hover{
       text-decoration: none;
@@ -1236,6 +1240,7 @@ label{
     padding-top: 11px;
     padding-bottom: 20px;
     justify-content: space-between;
+    height: 100%;
   }
   .auth-controls-mob{
     display: none;
@@ -1375,6 +1380,14 @@ label{
   justify-content: flex-start;
   height: 100%;
 
+  .list-hover{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -24px;
+    z-index: 30;
+  }
+
   & > li{
     min-width: 120px;
     font-weight: 700;
@@ -1435,6 +1448,14 @@ label{
       padding-right: 0;
     }
 
+    &:last-child{
+
+      .list-hover{
+        left: auto;
+        right: 24px;
+      }
+    }
+
     &:nth-child(2){
       & + li{
         margin-left: 40px;
@@ -1451,6 +1472,7 @@ label{
 
     &:hover{
       cursor: pointer;
+      z-index: 21;
 
       &::before{
         opacity: 1;
@@ -1477,14 +1499,6 @@ label{
   .icon{
     width: 52px;
     height: 50px;
-  }
-
-  .list-hover{
-    display: none;
-    position: absolute;
-    top: 102%;
-    left: -24px;
-    z-index: 30;
   }
 }
 
@@ -5012,11 +5026,39 @@ label{
 
       .jq-selectbox{
         z-index: 0;
+
         &__select{
           height: 34px;
           border: none;
           border-radius: 0;
           box-shadow: none;
+          position: relative;
+
+          &::before{
+            position: absolute;
+            content: '';
+            height: 34px;
+            width: 17px;
+            left: -17px;
+            top: 0;
+            opacity: 1;
+            background: url("../../images/temp/input-review-left.png") no-repeat center;
+          }
+
+          &::after{
+            position: absolute;
+            content: '';
+            height: 34px;
+            width: 17px;
+            left: -17px;
+            top: 0;
+            opacity: 0;
+            background: url("../../images/temp/input-review-left-hover.png") no-repeat center;
+          }
+
+          &:hover{
+            background: #F6F6F6;
+          }
         }
         &__dropdown{
           border-radius: 0;
@@ -5034,15 +5076,17 @@ label{
         border: none;
         padding: 0;
         position: relative;
+        z-index: 16;
 
         &::before{
           position: absolute;
           content: '';
           height: 34px;
           width: 17px;
-          left: -17px;
+          right: -17px;
           top: 0;
-          background: url("../../images/temp/input-review-left.png") no-repeat center;
+          opacity: 1;
+          background: url("../../images/temp/input-review-right.png") no-repeat center;
         }
 
         &::after{
@@ -5052,8 +5096,36 @@ label{
           width: 17px;
           right: -17px;
           top: 0;
-          background: url("../../images/temp/input-review-right.png") no-repeat center;
+          opacity: 0;
+          background: url("../../images/temp/input-review-right-hover.png") no-repeat center;
         }
+
+        &.hover{
+          &::before{
+            opacity: 0;
+          }
+          &::after{
+            opacity: 1;
+          }
+
+          .jq-selectbox__select{ 
+            &::before{
+              opacity: 0;
+            }
+            &::after{
+              opacity: 1;
+            }
+          }
+        }
+
+        //&.hover{
+        //  &::before{
+        //    background: url("../../images/temp/input-review-left-hover.png") no-repeat center;
+        //  }
+        //  &::after{
+        //    background: url("../../images/temp/input-review-right-hover.png") no-repeat center;
+        //  }
+        //}
       }
 
       .btn-primary{
@@ -5993,7 +6065,9 @@ label{
     padding: 0 30px;
 
     &__logo{
-      width: 30%;
+      width: auto;
+      margin-right: auto;
+      z-index: 2;
     }
     &__center-nav{
       width: 40%;
@@ -6343,6 +6417,9 @@ label{
     background: url(../../images/temp/header-bg-center-media.jpg) left no-repeat / cover;
     position: relative;
     border-top: 8px solid @colorGold;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     &::before{
       content: '';
@@ -6357,8 +6434,8 @@ label{
     }
     &__logo{
       order: 2;
-      width: 100%;
       justify-content: center;
+      margin: 0 auto;
     }
     &__center-nav{
       width: 100%;

@@ -626,6 +626,16 @@ $(document).ready(function () {
 
     });
 
+    $('.reviews .jq-selectbox__select').hover(
+        function () {
+            $(this).closest('.form-group').addClass('hover');
+        },
+        function () {
+            $(this).closest('.form-group').removeClass('hover');
+        }
+    );
+
+
     // Products list
 
     var stepDesctopProducts = 0;
